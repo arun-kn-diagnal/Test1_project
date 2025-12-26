@@ -1,0 +1,26 @@
+.about-container {
+    width: auto;
+    height: 50vh;
+    overflow: hidden;
+    padding: 0%;
+    position: relative;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.about-heading{
+    align-items: center;
+    color: var(--text-color);
+}
+
+
+.about-main{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}

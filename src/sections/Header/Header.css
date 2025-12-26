@@ -1,0 +1,26 @@
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:10px;
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0) ;
+    
+}
+.logoHeading{
+    color: var(--text-color);
+}
+
+.Highligthed{
+    color: var(--primary-color);
+}
+
+#login{
+    background-color: var(--primary-color);
+    
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+    font-size: medium;
+    color: var(--secondary-color);    
+
+}
