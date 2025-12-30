@@ -13,9 +13,7 @@ export default function Hero() {
           
           <div className="hero-overlay">
             <div className="hero-content">
-              <h1 className="hero-title">
-                <span className="highlight">M</span>ove.<span className="highlight">n</span>et 
-                <br /> where the theater <br />
+              <h1 className="hero-title">where the theater <br />
                 experience is at your fingertips.</h1>
             </div>
             <div className="heto-actions">
@@ -24,6 +22,10 @@ export default function Hero() {
             </div>
 
           </div>
+        </div>
+        <div className="hero-breaker">
+          <h2>Top Movies</h2>
+          
         </div>
       </div>
 

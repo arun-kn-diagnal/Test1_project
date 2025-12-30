@@ -1,0 +1,11 @@
+.notfound-main{
+    height: 90vh;
+}
+
+.notfound-content{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}

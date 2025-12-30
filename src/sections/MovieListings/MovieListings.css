@@ -1,0 +1,27 @@
+.movielist-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior:smooth;
+    
+}
+
+li {
+
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    
+    flex: 0 0 10%;
+    
+}
+
+li:nth-child(even) {
+    background-color: cyan;
+}
+
+
+Cards {
+    flex-shrink: 0;
+    flex-grow: 2;
+}
