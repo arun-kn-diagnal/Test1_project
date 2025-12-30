@@ -1,8 +1,8 @@
 .whyus-container {
     width: auto;
-    height: 50vh;
+    height: 60vh;
     overflow: hidden;
-    padding: 0%;
+    padding: 10px;
     position: relative;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -10,17 +10,37 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+
 }
 
 .whyus-heading{
     align-items: center;
     color: var(--text-color);
+    
 }
 
 
 .whyus-main{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50vh, 1fr));
     justify-content: space-between;
+    padding: 10px;
+    gap:20px;
+    width: 90vw;
+}
+
+.whyus-box{
+   
+    padding: 20px;
+    width: 50vh;
+    height: 20vh;
+    border: 1px solid white ;
+    border-radius: 10px;
+
+}
+.whyus-box-heading{
+    border-bottom: 1px dotted white ;
+}
+.whyus-box-desc{
+    margin-top: 10px;
 }

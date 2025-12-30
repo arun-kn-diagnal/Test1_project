@@ -5,6 +5,7 @@ import { type movieCard } from "../../types/types";
 const cards = (props: movieCard) => {
 
     const imageLink: string=`https://image.tmdb.org/t/p/original/${props.poster_path}`;
+    
     const [isShown, setIsShow] = useState(false);
 
     const handleMouseEnter = () => {

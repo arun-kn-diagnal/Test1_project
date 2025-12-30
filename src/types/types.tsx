@@ -25,3 +25,6 @@ export  type movieCard = {
     original_language: string;
     poster_path:string;
   }
+
+
+  

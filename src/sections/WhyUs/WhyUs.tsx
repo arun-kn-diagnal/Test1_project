@@ -1,4 +1,6 @@
 import "./WhyUs.css"
+import { WhyUsData } from "../../data/WhyUsData"
+import {type WhyUs} from "../../types/types"
 const WhyUs = () => {
 
   return (
@@ -6,7 +8,17 @@ const WhyUs = () => {
        <h1 className="whyus-heading">whyus section</h1>
 
        <div className="whyus-main">
-        
+        {WhyUsData.map((dataItem:WhyUs,index:number)=>
+        (
+          <div className="whyus-box">
+            <h1 className="whyus-box-heading">{dataItem.title}     <>{dataItem.icon}</></h1>
+            <p className="whyus-box-desc">{dataItem.desc}</p>
+            
+          </div>
+
+          
+          
+        ))}
         </div>
        
 
