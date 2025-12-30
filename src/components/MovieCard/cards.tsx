@@ -1,36 +1,38 @@
-import image from "../../assets/sampleimage.jpg"
 import "./cards.css"
 import { useState } from "react"
-const cards = () => {
+import { type movieCard } from "../../types/types";
 
-    const [isShown,setIsShow]=useState(false);
+const cards = (props: movieCard) => {
 
-    const handleMouseEnter = ()=>{
+    const imageLink: string=`https://image.tmdb.org/t/p/original/${props.poster_path}`;
+    const [isShown, setIsShow] = useState(false);
+
+    const handleMouseEnter = () => {
         setIsShow(true);
     }
 
-    const handleMouseOut = ()=>{
+    const handleMouseOut = () => {
         setIsShow(false);
     }
-  return (
-    <div className='card-container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
-        <img src={image} alt="" width="250" height="300"/>
-        {isShown&&
-        <div className="card-movie-details">
-            <h3 className="card-movie-title">
-                Superman
-            </h3>
-            <div className="card-movie-other">
-                <p>4.5</p>
-                <h4 className="journers">
-                    Comic
-                </h4>
-            </div>
+    return (
+        <div className='card-container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
+            <img src={imageLink} alt="" width="250" height="300" />
+            {isShown &&
+                <div className="card-movie-details">
+                    <h3 className="card-movie-title">
+                        {props.title}
+                    </h3>
+                    <div className="card-movie-other">
+                        <p>{props.vote_average}</p>
+                        <h4 className="journers">
+                            {props.original_language}
+                        </h4>
+                    </div>
 
+                </div>
+            }
         </div>
-        }
-    </div>
-  )
+    )
 }
 
 export default cards

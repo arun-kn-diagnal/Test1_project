@@ -18,3 +18,10 @@ export interface WhyUs{
   desc:String;
   icon:React.RefAttributes<SVGSVGElement>;
 }
+
+export  type movieCard = {
+    title: String;
+    vote_average: number;
+    original_language: string;
+    poster_path:string;
+  }

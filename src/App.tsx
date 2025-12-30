@@ -3,7 +3,7 @@ import Hero from './sections/Hero/Hero'
 import Footer from './sections/Footer/Footer';
 import FaQ from './sections/FaQ/FaQ';
 import Whyus from './sections/WhyUs/WhyUs';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MovieListings from './sections/MovieListings/MovieListings'
 import { PageNotFound } from './sections/notFound/PageNotFound';
 import './App.css'
@@ -11,7 +11,7 @@ import './App.css'
 
 
 function App() {
-  const videoUrl = "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
+  // const videoUrl = "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
 
   return (
     <>
