@@ -1,12 +1,20 @@
 import "./cards.css"
 import { useState } from "react"
 import { type movieCard } from "../../types/types";
+import { useNavigate } from "react-router-dom";
 
 const cards = (props: movieCard) => {
 
-    const imageLink: string=`https://image.tmdb.org/t/p/original/${props.poster_path}`;
-    
+    const imageLink: string = `https://image.tmdb.org/t/p/original/${props.poster_path}`;
+
     const [isShown, setIsShow] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleLogin = (event: React.FormEvent) => {
+        event.preventDefault();
+        navigate(`/movies/${props.id}`);
+    };
 
     const handleMouseEnter = () => {
         setIsShow(true);
@@ -16,7 +24,7 @@ const cards = (props: movieCard) => {
         setIsShow(false);
     }
     return (
-        <div className='card-container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
+        <div className='card-container' onClick={handleLogin} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
             <img src={imageLink} alt="" width="250" height="300" />
             {isShown &&
                 <div className="card-movie-details">

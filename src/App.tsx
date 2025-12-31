@@ -4,10 +4,11 @@ import Footer from './sections/Footer/Footer';
 import FaQ from './sections/FaQ/FaQ';
 import Whyus from './sections/WhyUs/WhyUs';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MovieListings from './sections/MovieListings/MovieListings'
+import TopRated from './sections/MovieListings/TopRated'
+import MovieListings from './sections/MovieListings/MovieListings';
 import { PageNotFound } from './sections/notFound/PageNotFound';
 import './App.css'
-
+import MoviesDetails from './sections/Movie/movieDetail'
 
 
 function App() {
@@ -20,18 +21,34 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
-              <MovieListings />
+              <TopRated title={"trending"} />
               <Whyus />
             </>}>
 
           </Route>
+
+          <Route path="/movies" element={
+            <>
+
+              <TopRated title={"trending"} />
+              <MovieListings title={"top_rated"} />
+              <MovieListings title={"now_playing"} />
+              <MovieListings title={"upcoming"} />
+              <MovieListings title={"popular"} />
+
+
+
+
+            </>
+          }></Route>
+          <Route path="/movies/:id" element={<MoviesDetails />} />
 
           <Route path='/faq' element={
             <FaQ />
           } />
 
           <Route path="*" element={
-            <PageNotFound/>
+            <PageNotFound />
           } />
         </Routes>
 

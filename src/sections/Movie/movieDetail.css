@@ -1,0 +1,139 @@
+
+.movie-banner{
+    height: 30vh;
+    z-index: -10;
+
+}
+.movie-banner img{
+    width: 100%;
+    height: 120%;
+   
+}
+
+.movie-detail-contents img{
+    width: auto;
+    height: 20vh;
+    margin-top: -5vh;
+
+}
+
+
+.movie-detail-contents{
+    
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.movie-details-head-data{
+    width: 50vw;
+    padding: 10px;
+    background-color: var(--text-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.rate-main-box{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--text-color);
+    padding: 10px;
+    justify-content: space-evenly;
+    
+}
+
+.desc-main-box{
+    padding: 10px;
+}
+.online-movie-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.movie-genres-box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    gap: 10px;
+    padding: 1vh;
+    overflow-x: auto;
+    scrollbar-width: none;
+    width: 100%;
+
+}
+
+.movie-genres-item{
+    
+    border-radius: 40px;
+    min-width: 30vw;
+    
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    align-content: center;
+    
+    
+}
+
+
+.rate-sub-Box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-shrink: 1;
+    
+}
+
+.rate-sub-Box h2{
+    display: flex;
+    justify-content: right;
+   
+}
+
+.rate-sub-Box h6{
+    font-size: x-large;
+}
+
+
+
+.movie-details-head-box{
+    display: flex;
+    flex-direction: row;
+}
+
+.genres-main-box{
+    display: flex;
+    
+}
+
+.movie-company-box{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap:10px;
+    padding: 5px;
+}
+
+.movie-company-item{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+}

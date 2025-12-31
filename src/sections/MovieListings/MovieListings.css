@@ -1,21 +1,20 @@
-.movielist-container {
+
+.movielist-container{
     display: flex;
-    gap: 10px;
+    flex-direction: row;
     overflow-x: auto;
-    padding: 10px;
-    scroll-behavior:smooth;
-    
+    scrollbar-width: none;
+    gap:10px;
+    padding: 5px;
 }
 
-li {
-    list-style-type: none;
-    
-    flex: 0 0 10%;
-    display:grid;
-    grid-template-columns: 0fr 2fr;
-    
+.movielist-item{
+    display: flex;
+    flex-direction: row;
+
 }
-.circle{
+
+.circle {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -27,8 +26,9 @@ li {
     margin-left: -30px;
     z-index: 10;
 }
-.circle p{
-    color:#dddddd;
+
+.circle p {
+    color: #dddddd;
 }
 
 
