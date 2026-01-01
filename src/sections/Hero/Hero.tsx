@@ -22,10 +22,7 @@ export default function Hero() {
 
           </div>
         </div>
-        <div className="hero-breaker">
-          <h2>Top Movies</h2>
-          
-        </div>
+        
       </div>
 
     </div>

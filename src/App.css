@@ -13,10 +13,24 @@
 }
 .body{
     padding: 20px;
+    display: flex;
 }
-/* arun remove this is for css making 
-div{
+/* arun remove this is for css making  */
+/* div{
     border:1px solid red;
 }
+
  */
 
+.set-frame{
+    box-shadow: 2px -30px 80px var(--background-color);
+}
+
+@media screen and (min-width: 1024px) {
+    .backframe{
+        height: 50vh;
+        z-index:-10;
+        position: relative;
+    }
+}
+@media screen and (min-width: 1200px) {}

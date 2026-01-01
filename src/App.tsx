@@ -1,17 +1,19 @@
+import { lazy } from 'react';
 
-import Hero from './sections/Hero/Hero'
-import Footer from './sections/Footer/Footer';
-import FaQ from './sections/FaQ/FaQ';
-import Whyus from './sections/WhyUs/WhyUs';
+const Hero = lazy(()=>import('./sections/Hero/Hero'))
+const Footer = lazy(()=>import('./sections/Footer/Footer'))
+const FaQ = lazy(()=>import('./sections/FaQ/FaQ'))
+const Whyus = lazy(()=>import('./sections/WhyUs/WhyUs'))
+const TopRated = lazy(()=>import('./sections/MovieListings/TopRated'))
+
+const MovieListings = lazy(()=>import('./sections/MovieListings/MovieListings'))
+const MoviesDetails = lazy(()=>import('./sections/Movie/movieDetail'))
+const Headers = lazy(()=>import('./sections/Header/Header'))
+const CarouselSection = lazy(()=>import('./sections/Carousel/CarouselSection'))
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import TopRated from './sections/MovieListings/TopRated'
-import MovieListings from './sections/MovieListings/MovieListings';
 import { PageNotFound } from './sections/notFound/PageNotFound';
 import './App.css'
-import MoviesDetails from './sections/Movie/movieDetail'
-import Headers from './sections/Header/Header'
-
-import CarouselSection from "./sections/Carousel/CarouselSection"
 
 function App() {
   // const videoUrl = "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
@@ -26,21 +28,28 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
+              
               <TopRated title={"trending"} />
               <Whyus />
+              
             </>}>
 
           </Route>
 
           <Route path="/movies" element={
             <>
-            <CarouselSection ></CarouselSection>
-              <TopRated title={"trending"} />
+            <div className="backframe">
+              <CarouselSection ></CarouselSection>
+            </div>
+            
+              <div className="set-frame">
+                <TopRated title={"trending"} />
               <MovieListings title={"top_rated"} />
               <MovieListings title={"now_playing"} />
               <MovieListings title={"upcoming"} />
               <MovieListings title={"popular"} />
 
+              </div>
 
 
 

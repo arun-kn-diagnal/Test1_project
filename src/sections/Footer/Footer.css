@@ -1,7 +1,6 @@
 .FooterContainer{
     background-color: var(--background-color);
-    position: absolute;
-    bottom: 0;
+    
     width:100vw;
     
 

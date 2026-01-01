@@ -9,9 +9,10 @@ const cards = (props: movieCard) => {
 
     const navigate = useNavigate();
 
-    const handleLogin = (event: React.FormEvent) => {
+    const handleMovie = (event: React.FormEvent) => {
         event.preventDefault();
-        navigate(`/movies/${props.id}`);
+        navigate(`/movies/${props.id}` ,{replace:true});
+        
     };
 
     const handleMouseEnter = () => {
@@ -22,7 +23,7 @@ const cards = (props: movieCard) => {
         setIsShow(false);
     }
     return (
-        <div className='card-container' onClick={handleLogin} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
+        <div className='card-container' onClick={handleMovie} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
             <img src={`https://image.tmdb.org/t/p/original/${props.poster_path}`} alt="" width="250" height="300" />
             {isShown &&
                 <div className="card-movie-details">

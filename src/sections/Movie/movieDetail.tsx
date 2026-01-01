@@ -3,25 +3,23 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 // import { type movieDetails } from "../../types/types";
 import "./movieDetail.css"
-import { Flex, Rate } from 'antd';
-import type { RateProps } from 'antd';
+// import type { RateProps } from 'antd';
+import SimilarMovieList from '../MovieListings/SimilarMovieList'
 
 const cards = () => {
     const { id } = useParams();
     const [movie, setMoiveis] = useState<any>();
-    const imageLinkStart: string = `https://image.tmdb.org/t/p/original/`;
 
-    const desc: RateProps['tooltips'] = [
-        'terrible',
-        { placement: 'top', title: 'bad', trigger: 'hover' },
-        'normal',
-        'good',
-        'wonderful',
-    ];
+    // const desc: RateProps['tooltips'] = [
+    //     'terrible',
+    //     { placement: 'top', title: 'bad', trigger: 'hover' },
+    //     'normal',
+    //     'good',
+    //     'wonderful',
+    // ];
 
     const [value, setValue] = useState<number>(5);
-    const [myValue, setMyValue] = useState<number>(0);
-
+    const [movieTime, setTime] = useState<string>("");
     const options = {
         method: 'GET',
         url: `https://api.themoviedb.org/3/movie/${id}`,
@@ -32,99 +30,73 @@ const cards = () => {
         }
     };
     const imageBannerLink: string = `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`;
-    const imageLink: string = `https://image.tmdb.org/t/p/original/${movie?.poster_path}`;
-
-
+    // const imageLink: string = `https://image.tmdb.org/t/p/original/${movie?.poster_path}`;
     useEffect(() => {
         axios
             .request(options)
             .then(res => {
                 setMoiveis(res.data);
                 setValue(res.data.vote_average);
+                setTime(timeFormator(res.data.runtime));
+                setValue(res.data.belongs_to_collection.id);
+
+                console.log(value)
             }
             )
             .catch(err => console.error(err));
+    }, [id])
 
-
-    }, [])
-
+    const timeFormator = (time: number): string => {
+        let hour = time / 60;
+        let min = time % 60;
+        let timeString = `${Math.round(hour)}` + " h " + `${min}` + " min"
+        return timeString;
+    }
 
 
     return (
-        <div className='movie-detail-container'>
-            <div className="movie-banner">
-                <img src={imageBannerLink} alt="" />
-            </div>
-            <div className="movie-detail-contents">
-                <img src={imageLink} alt="" className="poster" />
-                <div className="movie-details-head-box">
-                    <div className="movie-details-head-data">
-                        <h2 className="movieName">
-                            {movie?.original_title}
-                        </h2>
-                        <h4>
-                            {movie?.tagline}
-                        </h4>
-                        <div className="online-movie-data">{movie?.release_date}<span></span>{movie?.runtime / 60}</div>
+        <div className='movie-detail-container' >
 
-                    </div>
+            <div className="top-main-box" style={{ width: "50", height: "fit-content", backgroundImage: `url(${imageBannerLink})`, backgroundSize: "100% 100%", backgroundRepeat: "no-repeat" }}><h1 className="movie-title">{movie?.original_title}</h1>
+                <h2 className="movie-subtitle">{movie?.tagline}</h2>
 
+                <div className="movie-stats">
+                    <h4 className="imbd-rate">{movie?.vote_average}</h4>
+                    <h4 className="time" >{movieTime}</h4>
 
+                    <h4 className="year">{movie?.release_date}</h4>
                 </div>
+                <div className="genres">
 
+                    {movie?.genres.map((name: string, index: number) => (
+                        <p id={name}>{movie?.genres[index].name}</p>
 
-
-
-            </div>
-            <div className="rate-main-box">
-                <div className="rate-sub-Box">
-                    <h1>
-                        {value / 2}
-                    </h1>
-                    <h2>/5</h2>
-                </div>
-                <div className="rate-sub-Box">
-                    <Flex gap="middle" vertical>
-                        <Rate tooltips={desc} onChange={setMyValue} allowHalf defaultValue={myValue} />
-                    </Flex>
-                    <h6>rated by {movie?.vote_count}</h6>
-                </div>
-
-            </div>
-
-            <div>
-
-                <div className="desc-main-box">
-                    <h3>overview</h3>
-                    <p>{movie?.overview}</p>
-                </div>
-                <div className="genres-main-box">
-                    <div className="movie-genres-box">
-                        {movie?.genres.map((name: string, index: number) => (
-                            <div className="movie-genres-item">
-                                <p>{movie?.genres[index].name}</p>
-
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-            </div>
-            <div>
-                <div className="movie-company-box">
-                    {movie?.production_companies.map((name: string, index: number) => (
-                        <div className="movie-company-item">
-                            
-                            <p> {movie?.production_companies[index].name}</p>
-                            
-                            <img src={imageLinkStart + movie?.production_companies[index].logo_path} alt="" width={50} />
-                        </div>
                     ))}
                 </div>
             </div>
+            <div className="shade-movie-details">
+                <h4 className="title-movie-details">
+                    Overview
+                </h4>
+                <div className="desc-box">
+                    <p>{movie?.overview}</p>
+                </div>
+                <h4 className="title-movie-details">
+                    Production
+                </h4>
+                <div className="company">
 
+                    {movie?.production_companies.map((name: string, index: number) => (
+                        <div key={name} className="company-details">
+                            <h6>{movie?.production_companies[index].name}</h6>
+                        </div>
 
+                    ))}
+                </div>
+            </div>
+            <SimilarMovieList id={Number(id)} />
         </div>
+
     )
 }
 

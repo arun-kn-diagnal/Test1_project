@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
+import './Carousel.css';
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -8,6 +9,7 @@ const contentStyle: React.CSSProperties = {
   color: '#fff',
   marginTop:'-40px',
   textAlign: 'center',
+  zIndex:-10
 };
 const ImagesBanner:string[] = [
     "https://image.tmdb.org/t/p/original//7nfpkR9XsQ1lBNCXSSHxGV7Dkxe.jpg",
@@ -16,6 +18,7 @@ const ImagesBanner:string[] = [
     "https://image.tmdb.org/t/p/original//1RgPyOhN4DRs225BGTlHJqCudII.jpg"
 ]
 const App: React.FC = () => (
+  <div className='carousel-Container'>
 
 <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={3000}>
     
@@ -25,6 +28,7 @@ const App: React.FC = () => (
         </div>
     ))}
   </Carousel>
+</div>
 );
 
 export default App;
