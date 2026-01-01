@@ -9,7 +9,7 @@ const Faqitem = ({ faq, selected, setSelected, index }: FaqitemProps) => {
   const isOpen = selected === index;
 
   return (
-    <li>
+    <li key={index}>
       <button onClick={() => setSelected(isOpen ? null : index)}>
         {faq.question}
       </button>

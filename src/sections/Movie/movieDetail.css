@@ -6,6 +6,7 @@
     color:var(--text-color);
     
 }
+
 .top-main-box{
     box-shadow: inset 0px -20px 10px var(--border-color);
     padding: 20px;
@@ -53,7 +54,7 @@
     gap: 10px;
     padding: 10px;
     justify-content: left;
-    margin-bottom: 20px;
+    
     flex-wrap: wrap;
 }
 
@@ -69,6 +70,7 @@
 
    
 }
+
 .title-movie-details{
     padding-inline: 10px;
     font-size: min(35px,5vh);
@@ -88,4 +90,25 @@
 
     border-left:1px solid var(--text-color);    
     padding-left: 10px;
+}
+
+.watchNow{
+    padding: 5px;
+    font-size: 1.4vh;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 10px;   
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border-radius: 20px;
+}
+
+.rate-main-box{
+    
+    display: flex;
+    gap: 20px;
+}
+
+.rate-sub-Box{
+    background-color: rgba(240, 255, 240, 0);
 }
