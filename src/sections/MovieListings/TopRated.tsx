@@ -1,16 +1,16 @@
 import "./MovieListings.css"
 
 import Cards from "../../components/MovieCard/cards"
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { type movieCard } from "../../types/types";
-import {type propsOnlyText} from "../../types/types";
+import { type propsOnlyText } from "../../types/types";
 
-const Latest = (props:propsOnlyText) => {
+const Latest = (props: propsOnlyText) => {
 
   const [movies, setMoiveis] = useState<any[] | null>(null);
-  const headingWords :string=props.title.replaceAll("_"," ").toUpperCase();
+  const headingWords: string = props.title.replaceAll("_", " ").toUpperCase();
 
   const options = {
     method: 'GET',
@@ -31,22 +31,24 @@ const Latest = (props:propsOnlyText) => {
 
   return (
     <>
-    <h1>{headingWords}</h1>
-      <ol className="movielist-container">
-        
+      <div className="main-container-listings">
+        <h1 className="heading-lisitng">{headingWords}</h1>
 
-        {movies?.map((movie: movieCard, index: number) => (
-          <li className="movielist-item">
-            
-            <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} vote_average={movie.vote_average} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
-            
-            <div className="circle"><p>{index+1}</p></div>
-            
-            </li>
-)
-        )}
+        <div className="movielist-container">
 
-      </ol>
+          {movies?.map((movie: movieCard, index: number) => (
+            <div className="movielist-item">
+              <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
+
+              <div className="circle"><p>{index + 1}</p></div>
+
+
+            </div>
+
+          ))}
+
+        </div>
+      </div>
     </>
   )
 }

@@ -3,24 +3,30 @@
     width: 20vh;
     display: inline-block;
     position: relative;
+        border: 0.5px solid violet;
+        animation: boxShadow 5s infinite;
+    
+
     
 }
 
+@keyframes boxShadow {
+    50%{box-shadow: -10px 10px 24px var(--border-color);}
+    
+}
 
 .card-container img{
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px 10px 0px 0px ;
     z-index: -1;
-    border:2px double black;
+    box-shadow:2px double var(--border-color);
 }
 
 .card-movie-details{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0px 0px 10px 10px ;
     z-index: 0;
     position:absolute;
     bottom: 0;

@@ -1,3 +1,34 @@
 .FooterContainer{
-    height: 10vh;
+    background-color: var(--background-color);
+    position: absolute;
+    bottom: 0;
+    width:100vw;
+    
+
+}
+
+.topline-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+.copywrite{
+    font-size: large;
+    color:var(--text-color);
+}
+
+.socials-footer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.icons-footer{
+    padding: 5px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

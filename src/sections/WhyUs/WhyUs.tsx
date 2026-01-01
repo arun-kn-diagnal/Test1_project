@@ -10,7 +10,7 @@ const WhyUs = () => {
        <div className="whyus-main">
         {WhyUsData.map((dataItem:WhyUsType,index:number)=>
         (
-          <div className="whyus-box">
+          <div key = {`${index}`} className={`whyus-box`}>
             <h1 className="whyus-box-heading">{dataItem.title}     <>{dataItem.icon}</></h1>
             <p className="whyus-box-desc">{dataItem.desc}</p>
             

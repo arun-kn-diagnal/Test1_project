@@ -1,5 +1,4 @@
 import "./Hero.css"
-import Header from "../Header/Header";
 
 
 export default function Hero() {
@@ -8,7 +7,7 @@ export default function Hero() {
       {/* Hero Section */}
 
       <div className="hero-container">
-        <Header />
+        
         <div className="hero-background">
           
           <div className="hero-overlay">

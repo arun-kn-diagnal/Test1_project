@@ -30,23 +30,24 @@ const MovieListings = (props: propsOnlyText) => {
 
   return (
     <>
-    <div>
-      <h1>{headingWords}</h1>
-      <div className="movielist-container">
+      <div className="main-container-listings">
+        <h1 className="heading-lisitng">{headingWords}</h1>
 
-        {movies?.map((movie: movieCard, index: number) => (
-          <div className="movielist-item">
-            <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} vote_average={movie.vote_average} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
+        <div className="movielist-container">
 
-            <div className="circle"><p>{index + 1}</p></div>
+          {movies?.map((movie: movieCard, index: number) => (
+            <div className="movielist-item">
+              <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
 
-            
-          </div>
+              <div className="circle"><p>{index + 1}</p></div>
 
-        ))}
 
+            </div>
+
+          ))}
+
+        </div>
       </div>
-    </div>
     </>
   )
 }

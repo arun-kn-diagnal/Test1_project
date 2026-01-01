@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const cards = (props: movieCard) => {
 
-    const imageLink: string = `https://image.tmdb.org/t/p/original/${props.poster_path}`;
-
     const [isShown, setIsShow] = useState(false);
 
     const navigate = useNavigate();
@@ -25,14 +23,14 @@ const cards = (props: movieCard) => {
     }
     return (
         <div className='card-container' onClick={handleLogin} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
-            <img src={imageLink} alt="" width="250" height="300" />
+            <img src={`https://image.tmdb.org/t/p/original/${props.poster_path}`} alt="" width="250" height="300" />
             {isShown &&
                 <div className="card-movie-details">
                     <h3 className="card-movie-title">
                         {props.title}
                     </h3>
                     <div className="card-movie-other">
-                        <p>{props.vote_average}</p>
+                        <p>{props.release_date}</p>
                         <h4 className="journers">
                             {props.original_language}
                         </h4>

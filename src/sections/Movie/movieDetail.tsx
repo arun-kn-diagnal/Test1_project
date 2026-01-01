@@ -114,7 +114,9 @@ const cards = () => {
                 <div className="movie-company-box">
                     {movie?.production_companies.map((name: string, index: number) => (
                         <div className="movie-company-item">
-                            {movie?.production_companies[index].name}
+                            
+                            <p> {movie?.production_companies[index].name}</p>
+                            
                             <img src={imageLinkStart + movie?.production_companies[index].logo_path} alt="" width={50} />
                         </div>
                     ))}

@@ -1,4 +1,7 @@
-
+.movie-detail-container{
+    padding: 10px;
+    
+}
 .movie-banner{
     height: 30vh;
     z-index: -10;
@@ -24,14 +27,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 10px;
 
 }
 
-.movie-details-head-data{
-    width: 50vw;
-    padding: 10px;
+.movie-details-head-box{
+    display: flex;
+    flex-direction: row;
     background-color: var(--text-color);
     border: 1px solid var(--border-color);
+    width: 80cqw;
+}
+
+.movie-details-head-data{
+    width: 100%;
+    padding: 10px;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -70,6 +81,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     width: 100%;
+    
 
 }
 
@@ -108,10 +120,6 @@
 
 
 
-.movie-details-head-box{
-    display: flex;
-    flex-direction: row;
-}
 
 .genres-main-box{
     display: flex;
@@ -127,13 +135,27 @@
     padding: 5px;
 }
 
+
 .movie-company-item{
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     gap:10px;
     padding: 10px;
     border: 1px solid var(--border-color);
-
+    width: fit-content;
+    
     border-radius: 10px;
+
+}
+
+.movie-company-item p{
+    display: inline;
+    align-self: center;
+
+    font-family: 'Open Sans', sans-serif;
+    
+    
+    
 
 }

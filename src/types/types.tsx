@@ -23,7 +23,7 @@ export type movieCard = {
   imdb_id: number;
   id: number;
   title: String;
-  vote_average: number;
+  release_date: String;
   original_language: string;
   poster_path: string;
 }
