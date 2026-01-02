@@ -1,10 +1,12 @@
 .hero-container {
     width: auto;
-    height: 80vh;
+    height: 100vh;
+    top:0;
     overflow: hidden;
     padding: 0%;
     position: relative;
     background-color: var(--background-color);
+    z-index: -50;
     
 }
 

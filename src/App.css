@@ -14,9 +14,11 @@
 .body{
     padding: 20px;
     display: flex;
+    background-color: var(--background-color);
+
 }
-/* arun remove this is for css making  */
-/* div{
+/* arun remove this is for css making 
+div{
     border:1px solid red;
 }
 

@@ -1,0 +1,30 @@
+.photo-container {
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    width: 100vw;
+    height: 30vh;
+    padding: 10px;
+    background-color: none;
+    gap: 10px;
+    scroll-behavior: auto;
+}
+
+
+
+.box img{
+    width: 60vw;
+    height: 30vh;
+}
+@-webkit-keyframes move {
+    0% {
+        margin-left: -40px;
+    }
+
+    100% {
+        margin-left: 80px;
+    }
+}

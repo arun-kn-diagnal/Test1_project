@@ -5,7 +5,9 @@
     padding:10px;
     align-items: center;
     background-color: rgba(240, 248, 255, 0) ;
-    
+    position: absolute;
+    z-index: 60;
+    width: 99vw;
     
 }
 .logoHeading{

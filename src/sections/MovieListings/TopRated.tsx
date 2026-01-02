@@ -31,7 +31,7 @@ const Latest = (props: propsOnlyText) => {
 
   return (
     <>
-      <div className="main-container-listings">
+      <div className="main-container-listings" id="movie-container">
         <h1 className="heading-lisitng">{headingWords}</h1>
 
         <div className="movielist-container">

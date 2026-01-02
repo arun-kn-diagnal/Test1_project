@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useState } from 'react';
 
 const Hero = lazy(() => import('./sections/Hero/Hero'))
 const Footer = lazy(() => import('./sections/Footer/Footer'))
@@ -16,12 +16,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PageNotFound } from './sections/notFound/PageNotFound';
 import './App.css'
 
+import { Affix } from 'antd';
 function App() {
+  const [top, setTop] = useState<number>(0);
   // const videoUrl = "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
 
   return (
     <>
-      <Headers />
+      <Affix offsetTop={top}>
+        <Headers />
+      </Affix>
       <BrowserRouter>
         <Routes>
 
@@ -31,8 +35,8 @@ function App() {
               <Hero />
 
               <TopRated title={"trending"} />
-              <Whyus />
-              <Footer />
+              <FaQ></FaQ>
+
             </>}>
 
           </Route>

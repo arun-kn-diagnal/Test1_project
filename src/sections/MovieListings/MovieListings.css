@@ -1,49 +1,62 @@
-.main-container-listings{
+.main-container-listings {
     padding: 10px;
+
+
+
+}
+
+#movie-container {
     background-color: var(--background-color);
 }
-.heading-lisitng{
+
+#similar {
+    background-color: none;
+}
+
+.heading-lisitng {
     font-style: italic;
     color: var(--text-color);
-    
+
     text-decoration: underline;
     text-decoration-color: var(--text-color);
     padding-left: 10px;
 }
-.movielist-container{
+
+.movielist-container {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     scrollbar-width: none;
-    gap:30px;
+    gap: 30px;
     padding: 5px;
 }
 
-.movielist-item{
+.movielist-item {
     display: flex;
     flex-direction: row;
     padding: 10px;
-   
-    
+
+
 
 }
 
 
-.movielist-item:hover{
-   transform: scale(1.1); 
-   
+.movielist-item:hover {
+    transform: scale(1.1);
+
 }
+
 .circle {
     display: flex;
     justify-content: center;
-    align-items:center ;
-    
+    align-items: center;
+
     width: 3cap;
     height: 3cap;
     border-radius: 50px;
     background-color: var(--border-color);
     margin-left: -40px;
-    margin-top: 10px ;
+    margin-top: 10px;
     z-index: 10;
 }
 
@@ -56,7 +69,7 @@
 Cards {
     flex-shrink: 0;
     flex-grow: 2;
-    
+
 }
 
 

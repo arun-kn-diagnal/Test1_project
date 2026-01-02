@@ -9,13 +9,13 @@ const Faqitem = ({ faq, selected, setSelected, index }: FaqitemProps) => {
   const isOpen = selected === index;
 
   return (
-    <li key={index}>
+    <div key={index}>
       <button onClick={() => setSelected(isOpen ? null : index)}>
         {faq.question}
       </button>
       
       {isOpen && <p>{faq.answer}</p>}
-    </li>
+    </div>
   );
 };
 
@@ -24,7 +24,7 @@ const FaqBox = ({ faqs }: { faqs: question[] }) => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <ul>
+    <div>
       {faqs.map((faq: question, index: number) => (
         <Faqitem
           key={index}
@@ -34,7 +34,7 @@ const FaqBox = ({ faqs }: { faqs: question[] }) => {
           index={index}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 

@@ -7,6 +7,11 @@ import "./movieDetail.css"
 import SimilarMovieList from '../MovieListings/SimilarMovieList'
 import { Flex, Rate } from 'antd';
 import type { RateProps } from 'antd';
+import { lazy } from "react";
+
+const Testimony = lazy(() => import('../../components/Testimony/Testimony'))
+
+const Photo = lazy(() => import('../../components/Photos/Photo'))
 
 const cards = () => {
     const { id } = useParams();
@@ -26,8 +31,9 @@ const cards = () => {
         'good',
         'wonderful',
     ];
-    const [value, setValue] = useState<number>(5);
+    const [value, setValue] = useState<number>(0);
     const [myValue, setMyValue] = useState<number>(0);
+    const [coll, setColl] = useState<number>(0);
 
     const [movieTime, setTime] = useState<string>("");
     const options = {
@@ -49,19 +55,25 @@ const cards = () => {
                 setMoiveis(res.data);
 
                 setTime(timeFormator(res.data.runtime));
-                setValue(res.data.belongs_to_collection.id);
+                if (res.data.belongs_to_collection.id) {
+                    setColl(res.data.belongs_to_collection.id);
+                }
                 setValue(res.data.vote_average);
 
             }
             )
             .catch(err => console.error(err));
+
+
     }, [id])
 
     const timeFormator = (time: number): string => {
         let hour = time / 60;
         let min = time % 60;
         let timeString = `${Math.round(hour)}` + " h " + `${min}` + " min"
+
         return timeString;
+
     }
 
 
@@ -76,7 +88,7 @@ const cards = () => {
 
                     <h4 className="year">{movie?.release_date}</h4>
                 </div>
-               
+
                 <div className="genres">
 
                     {movie?.genres.map((name: string, index: number) => (
@@ -84,7 +96,7 @@ const cards = () => {
 
                     ))}
                 </div>
-                 <div className="rate-main-box">
+                <div className="rate-main-box">
                     <div className="rate-sub-Box">
                         <h1>
                             {value / 2}
@@ -92,12 +104,14 @@ const cards = () => {
                     </div>
                     <div className="rate-sub-Box">
                         <Flex gap="middle" vertical>
-                            <Rate tooltips={desc} onChange={setMyValue} allowHalf defaultValue={value / 2} />
+                            <Rate tooltips={desc} onChange={setMyValue} allowHalf defaultValue={parseFloat((value / 2).toFixed(0))} />
                         </Flex>
                         <h6>rated by {movie?.vote_count}</h6>
                     </div>
-                <button className="watchNow" onClick={watchNow}>Watch Now</button>
-
+                    <div className="movie-details-button">
+                        <button className="watchNow" onClick={watchNow}>trailer</button>
+                        <button className="watchNow" onClick={watchNow}>Watch Now</button>
+                    </div>
                 </div>
 
 
@@ -110,6 +124,7 @@ const cards = () => {
                 <div className="desc-box">
                     <p>{movie?.overview}</p>
                 </div>
+
                 <h4 className="title-movie-details">
                     Production
                 </h4>
@@ -122,10 +137,25 @@ const cards = () => {
 
                     ))}
                 </div>
+
+
+                <div>
+
+                </div>
+                <SimilarMovieList id={Number(id)} />
+                <h4 className="title-movie-details">
+                    Reviews
+                </h4>
+                <Testimony id={Number(id)} ></Testimony>
+
+                <h4 className="title-movie-details">
+                    Hot clicks
+                </h4>
+                <Photo id={String(id)} original_language={`${movie?.original_language}`}></Photo>
+
             </div>
 
 
-            <SimilarMovieList id={Number(id)} />
         </div>
 
     )

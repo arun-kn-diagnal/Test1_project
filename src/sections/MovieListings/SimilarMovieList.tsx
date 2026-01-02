@@ -30,7 +30,7 @@ const MovieListings = (props: propsOnlyid) => {
 
   return (
     <>
-      <div className="main-container-listings">
+      <div className="main-container-listings" id="similar">
         <h1 className="heading-lisitng">Similar</h1>
 
         <div className="movielist-container">

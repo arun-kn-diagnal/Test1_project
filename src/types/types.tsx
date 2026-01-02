@@ -34,20 +34,34 @@ export type propsOnlyText = {
   title: string;
 }
 
-export type propsOnlyid ={
-  id:Number;
+export type propsOnlyid = {
+  id: Number;
 }
 
-export type genre={
-  id:number;
-  name:string;
+export type propsIdandLan = {
+  id: string;
+  original_language: string;
 }
-export type movieDetails={
+export type photoData = {
+  aspect_ratio: number,
+  file_path: string,
+  height: number,
+  iso_3166_1: string,
+  iso_639_1: string,
+  vote_average: number,
+  vote_count: number,
+  width: number
+}
+export type genre = {
+  id: number;
+  name: string;
+}
+export type movieDetails = {
   adult: boolean;
   backdrop_path: string | null;
   belongs_to_collection: null;
   budget: number;
-  
+
   homepage: string;
   id: number;
   imdb_id: string;

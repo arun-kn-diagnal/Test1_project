@@ -1,0 +1,41 @@
+.Testimony-container{
+    background-color: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Testimony-box{
+    display: flex;
+    flex-direction: row-reverse;
+   
+    border: 2px solid var(--border-color);
+    background-color: var(--background-color);
+}
+.Testimony-text-content-box{
+    height: 15vh;
+    overflow-y:auto;
+}
+.Testimony-text-content{
+    padding: 10px;
+    height: 10ch;
+    overflow-y:auto;
+    color:var(--text-color);
+}
+
+
+
+.content-author{
+    background-color: var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.content-close {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}

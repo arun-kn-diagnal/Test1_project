@@ -3,7 +3,6 @@ import "./Cta.css"
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import ColorlibConnector from ''
 import {QontoStepIcon,}
 
 const steps = ["SignUp", "Make popcorn", "ready to watch"]
