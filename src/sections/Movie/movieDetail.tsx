@@ -104,7 +104,7 @@ const cards = () => {
                     </div>
                     <div className="rate-sub-Box">
                         <Flex gap="middle" vertical>
-                            <Rate tooltips={desc} onChange={setMyValue} allowHalf defaultValue={parseFloat((value / 2).toFixed(0))} />
+                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf defaultValue={parseFloat((value / 2).toFixed(0))} />
                         </Flex>
                         <h6>rated by {movie?.vote_count}</h6>
                     </div>
@@ -151,7 +151,7 @@ const cards = () => {
                 <h4 className="title-movie-details">
                     Hot clicks
                 </h4>
-                <Photo id={String(id)} original_language={`${movie?.original_language}`}></Photo>
+                <Photo key={coll} id={String(id)} original_language={`${movie?.original_language}`}></Photo>
 
             </div>
 

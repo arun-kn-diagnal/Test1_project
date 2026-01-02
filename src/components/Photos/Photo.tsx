@@ -35,7 +35,7 @@ const Photo = (props: propsIdandLan) => {
             <div className="photo-container">
                 {photoD?.map((file_path: string, index: number) => (
 
-                    <div className="box">
+                    <div className="box" key={file_path}>
 
                         <img src={`https://image.tmdb.org/t/p/original/${photoD[index].file_path}`} alt="" height="fit-content" width="fit-content" />
                     </div>

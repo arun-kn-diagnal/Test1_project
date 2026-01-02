@@ -1,5 +1,4 @@
-import { FaqData } from "../../data/FaqData"
-import FaqBox from "../../components/Faqboc"
+
 import './FaQ.css'
 
 const FaQ = () => {

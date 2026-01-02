@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import "./Hero.css"
 
 
+
+
 export default function Hero() {
+
+
+  const navigate = useNavigate();
+
   return (
     <div>
       {/* Hero Section */}
@@ -17,7 +24,7 @@ export default function Hero() {
             </div>
             <div className="heto-actions">
               <input required type="email" placeholder="campion@move.net" className="hero-input" />
-              <button type="submit" className="hero-btn-sigup">Sign UP</button>
+              <button onClick={()=>{navigate("/movies")}} className="hero-btn-sigup">Sign UP</button>
             </div>
 
           </div>

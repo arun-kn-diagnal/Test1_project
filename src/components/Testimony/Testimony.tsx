@@ -36,7 +36,7 @@ const Photo = (props: propsOnlyid) => {
         <>
             <div className="Testimony-container">
                 {reviews?.map((content: string, index: number) => (
-                    <div className="Testimony">
+                    <div className="Testimony" key={content}>
                         {status && (index === selected) ?
                             <div className='Testimony-box'>
                                 <div className='Testimony-text-content-box'>
