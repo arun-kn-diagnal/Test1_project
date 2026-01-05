@@ -5,35 +5,30 @@ import "./video-js.css"
 import { useParams } from "react-router-dom";
 
 export const VideoJS = () => {
-    const videoRef = useRef(null);
+    const videoRef = useRef<HTMLDivElement>(null)
 
-    const {backdrop_path} = useParams();
+
+    const { backdrop_path } = useParams();
     const imageBannerLink: string = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-
-
     useEffect(() => {
-
-
         const videoElement = document.createElement("video-js");
-        videoRef.current.appendChild(videoElement);
+        videoElement.classList.add('vjs-big-play-centered');
         
-
+        videoRef.current?.appendChild?.(videoElement);
+        console.log(videoRef.current)
         videojs(videoElement, {
-            autoplay: true,
+            autoplay: false,
             controls: true,
-           
+
             fluid: true,
             sources: [{
                 src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
                 type: 'video/mp4'
             }],
-            poster: {imageBannerLink}
+            poster: { imageBannerLink }
 
         }
         );
-
-
-
 
     }, []);
 
