@@ -15,7 +15,7 @@ export const VideoJS = () => {
 
 
         const videoElement = document.createElement("video-js");
-        videoRef.current?.appendChild(videoElement);
+        videoRef.current.appendChild(videoElement);
         
 
         videojs(videoElement, {
