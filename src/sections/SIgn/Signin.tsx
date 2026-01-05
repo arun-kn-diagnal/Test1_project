@@ -1,36 +1,28 @@
 import React from 'react';
 import type { FormProps } from 'antd';
-import { Button, Checkbox, Form, Input ,Tooltip,Typography} from 'antd';
+import { Button, Checkbox, Form, Input, Tooltip, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import "./SignUp.css"
+
 type FieldType = {
   username?: string;
-  email?: string;
   password?: string;
   remember?: string;
 };
-
-
-
-
 const SignUp: React.FC = () => {
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    console.log(values.username)
-    localStorage.setItem(String(values.username), String(values.password));
-
-    navigate("/movies")
+    if (localStorage.getItem(String(values.username))==values.password){
+      navigate('/movies')
+    }
   };
 
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-    console.log('Failed:',);
-    alert(`there is an error ${errorInfo.message}`)
+    console.log('Failed:', errorInfo);
   };
-
   const navigate = useNavigate();
 
   return (
     <div className="signup-container">
-
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -42,17 +34,8 @@ const SignUp: React.FC = () => {
         autoComplete="off"
       >
         <Form.Item<FieldType>
-          label="username"
+          label="Username"
           name="username"
-          rules={[{ required: true, message: 'Please input your username!' }]}
-        >
-          <Input />
-        </Form.Item>
-
-
-        <Form.Item<FieldType>
-          label="email"
-          name="email"
           rules={[{ required: true, message: 'Please input your username!' }]}
         >
           <Input />
@@ -77,8 +60,8 @@ const SignUp: React.FC = () => {
         </Form.Item>
         <Form.Item>
           <Tooltip title="Useful information">
-          <Typography.Link onClick={()=>{navigate('/signin')}}>already a user ?</Typography.Link>
-        </Tooltip>
+            <Typography.Link onClick={() => { navigate('/signup') }}>Not a user yet?</Typography.Link>
+          </Tooltip>
         </Form.Item>
       </Form>
     </div>

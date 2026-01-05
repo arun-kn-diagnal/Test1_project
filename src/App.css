@@ -8,7 +8,7 @@
     --background-color:#05070a;
 
     --border-color:#351064;
-
+    scrollbar-width: none;
 }
 .body{
     padding: 20px;

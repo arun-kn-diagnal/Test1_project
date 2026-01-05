@@ -13,6 +13,7 @@ const VideoPlayer = lazy(() => import('./sections/videoPlayer/VideoPlayer'))
 const MoviePlayer = lazy(()=>import('./sections/videoPlayer/MoviePlayer'))
 
 const SignUp = lazy(() => import('./sections/SIgn/SignUp'))
+const Signin =lazy(() => import('./sections/SIgn/Signin'))
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PageNotFound } from './sections/notFound/PageNotFound';
@@ -82,7 +83,9 @@ function App() {
           <Route path="/signup" element={
             <SignUp></SignUp>
           } />
-
+          <Route path='signin' element={
+            <Signin></Signin>
+          }/>
 
           <Route path="/video/:id" element={
             

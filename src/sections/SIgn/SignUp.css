@@ -1,13 +1,15 @@
-.signup-container{
-    height: 100vh;
+.signup-container {
+    height: 95vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--border-color);
+
 }
 
-.signup-form{
+.signup-form {
     display: flex;
     flex-direction: column;
     width: 80vw;
@@ -18,8 +20,12 @@
 
 }
 
-.signup-form input{
-    border:0px;
+.signup-form input {
+    border: 0px;
     font-size: x-large;
     border-bottom: 1px solid red;
+}
+
+Form {
+    color: var(--title-color);
 }

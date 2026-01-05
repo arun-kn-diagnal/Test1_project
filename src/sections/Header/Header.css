@@ -27,7 +27,7 @@
     border-radius: 20px;
     font-size: medium;
     color: var(--secondary-color);    
-    width: 10vw;
+    width: fit-content;
     height: 2.5vh;
 
 }
