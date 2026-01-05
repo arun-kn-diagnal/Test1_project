@@ -1,51 +1,31 @@
-import React from 'react';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Flex, Form, Input } from 'antd';
 import "./SignUp.css"
+const SignUp=()=>{
 
-const App: React.FC = () => {
-  const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
-  };
+  const SubmitData =()=>{
 
-  return (
-    <div className='SignUp'>
-        <Form
-      name="login"
-      initialValues={{ remember: true }}
-      style={{ maxWidth: 360 }}
-      onFinish={onFinish}
-    >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
-      >
-        <Input prefix={<UserOutlined />} placeholder="Username" />
-      </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: 'Please input your Password!' }]}
-      >
-        <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
-      </Form.Item>
-      <Form.Item>
-        <Flex justify="space-between" align="center">
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-          <a href="">Forgot password</a>
-        </Flex>
-      </Form.Item>
+  }
+  
+    return (
+      <div className="signup-container">
+        
+        <form className='signup-form'>
+          <p>
 
-      <Form.Item>
-        <Button block type="primary" htmlType="submit">
-          Log in
-        </Button>
-        or <a href="">Register now!</a>
-      </Form.Item>
-    </Form>
-    </div>
-  );
-};
+            Hi ,my name is <input type='text' name='' id='' />,
+          
+            I would be using <input type="email" name="" id="" /> as my email,
+          
+          
+            password for this platform will be <input type="password" name="" id="" /> ,
+          
+            Let me confirm it once more <input type="password" name='' id="" />
+          </p>
 
-export default App;
+          <p><button type='submit' onClick={()=>{SubmitData}}>click here to confirm all the above </button></p>
+
+        </form>
+      </div>
+    )
+  }
+
+export default SignUp

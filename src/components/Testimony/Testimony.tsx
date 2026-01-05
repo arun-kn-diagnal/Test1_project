@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import type { propsOnlyid } from '../../types/types'
 import axios from 'axios'
 import './Testimony.css'
+
+import { LucideArrowDown, LucideArrowUp } from 'lucide-react'
+
 const Photo = (props: propsOnlyid) => {
 
     const [reviews, setreviews] = useState<any[]>();
@@ -40,10 +43,11 @@ const Photo = (props: propsOnlyid) => {
                         {status && (index === selected) ?
                             <div className='Testimony-box'>
                                 <div className='Testimony-text-content-box'>
-                                    <p className='content-author'>review by {reviews[index].author} <button className='content-close ' onClick={() => {
-                                        setStatus(!status)
-                                        setSelected(null)
-                                    }}>X</button></p>
+                                    <p className='content-author'>review by {reviews[index].author}
+                                        <button className='content-open  ' onClick={() => {
+                                            setStatus(!status)
+                                            setSelected(null)
+                                        }}><LucideArrowUp/></button></p>
 
                                     <div className='Testimony-text-content'>
                                         <p className='content-review'> {reviews[index].content}</p>
@@ -55,27 +59,28 @@ const Photo = (props: propsOnlyid) => {
                             </div>
 
                             :
-                            <div className=''>
+                            <div className='Testimony-box'>
                                 <div className='Testimony-text-content-before'>
-                                    <p className='content-author'>review by {reviews[index].author} 
-                                        
-                                    <button className='content-open ' onClick={() => {
-                                        setStatus(!status)
-                                        setSelected(index)
-                                    }}>view</button></p>
+                                    
+                                    <p className='content-author'>review by {reviews[index].author}
+
+                                        <button className='content-open ' onClick={() => {
+                                            setStatus(!status)
+                                            setSelected(index)
+                                        }}><LucideArrowDown /></button></p>
                                 </div>
                             </div>
-        
+
                         }
 
 
 
-                                </div>
-                                )
+                    </div>
+                )
 
                 )}
-                            </div >
+            </div >
         </>
-                )
+    )
 }
-                export default Photo
+export default Photo

@@ -111,55 +111,64 @@ const cards = () => {
                     </div>
                     <div className="rate-sub-Box">
                         <Flex gap="middle" vertical>
-                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf defaultValue={parseFloat((value / 2).toFixed(0))} />
+                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf defaultValue={5} />
                         </Flex>
                         <h6>rated by {movie?.vote_count}</h6>
                     </div>
-                    <div className="movie-details-button">
-                        <button className="watchNow" onClick={watchNow}>trailer</button>
-                        <button className="watchNow" onClick={watchNowMovie}>Watch Now</button>
-                    </div>
+
                 </div>
+                <div className="movie-details-button">
+                    <button className="watchNow" onClick={watchNow}>trailer</button>
+                    <button className="watchNow" onClick={watchNowMovie}>Watch Now</button>
+                </div>
+
+
+
 
 
 
             </div>
             <div className="shade-movie-details">
-                <h4 className="title-movie-details">
-                    Overview
-                </h4>
-                <div className="desc-box">
-                    <p>{movie?.overview}</p>
+                <div className="content-section-box">
+                    <h4 className="title-movie-details">
+                        Overview
+                    </h4>
+                    <div className="desc-box">
+                        <p>{movie?.overview}</p>
+                    </div>
+
+                    <h4 className="title-movie-details">
+                        Production
+                    </h4>
+                    <div className="company">
+
+                        {movie?.production_companies.map((name: string, index: number) => (
+                            <div key={name} className="company-details">
+                                <h6>{movie?.production_companies[index].name}</h6>
+                            </div>
+
+                        ))}
+                    </div>
+
+
+                    <div>
+                    </div>
                 </div>
-
-                <h4 className="title-movie-details">
-                    Production
-                </h4>
-                <div className="company">
-
-                    {movie?.production_companies.map((name: string, index: number) => (
-                        <div key={name} className="company-details">
-                            <h6>{movie?.production_companies[index].name}</h6>
-                        </div>
-
-                    ))}
+                <div className="content-section-box">
+                    <SimilarMovieList id={Number(id)} />
                 </div>
-
-
-                <div>
-
+                <div className="content-section-box">
+                    <h4 className="title-movie-details">
+                        Reviews
+                    </h4>
+                    <Testimony id={Number(id)} ></Testimony>
                 </div>
-                <SimilarMovieList id={Number(id)} />
-                <h4 className="title-movie-details">
-                    Reviews
-                </h4>
-                <Testimony id={Number(id)} ></Testimony>
-
-                <h4 className="title-movie-details">
-                    Hot clicks
-                </h4>
-                <Photo key={coll} id={String(id)} original_language={`${movie?.original_language}`}></Photo>
-
+                <div className="content-section-box">
+                    <h4 className="title-movie-details">
+                        Hot clicks
+                    </h4>
+                    <Photo key={coll} id={String(id)} original_language={`${movie?.original_language}`}></Photo>
+                </div>
             </div>
 
 

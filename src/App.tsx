@@ -1,5 +1,4 @@
 import { lazy } from 'react';
-import Videojs from "./sections/videoPlayer/videoPlayer"
 const Hero = lazy(() => import('./sections/Hero/Hero'))
 const Footer = lazy(() => import('./sections/Footer/Footer'))
 const FaQ = lazy(() => import('./sections/FaQ/FaQ'))
@@ -11,6 +10,8 @@ const MoviesDetails = lazy(() => import('./sections/Movie/movieDetail'))
 const Headers = lazy(() => import('./sections/Header/Header'))
 const CarouselSection = lazy(() => import('./sections/Carousel/CarouselSection'))
 const VideoPlayer = lazy(() => import('./sections/videoPlayer/videoPlayer'))
+const MoviePlayer = lazy(()=>import('./sections/videoPlayer/moviePlayer'))
+
 const SignUp = lazy(() => import('./sections/SIgn/SignUp'))
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -85,7 +86,7 @@ function App() {
 
           <Route path="/video/:id" element={
             
-             <Videojs />
+             <MoviePlayer />
              
           }
           />

@@ -1,13 +1,14 @@
 .Testimony-container{
     background-color: none;
-    padding: 10px;
+    
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 .Testimony-box{
     display: flex;
-    flex-direction: row-reverse;
+    
    
     border: 2px solid var(--border-color);
     background-color: var(--background-color);
@@ -15,6 +16,10 @@
 .Testimony-text-content-box{
     height: 15vh;
     overflow-y:auto;
+    width: fit-content;
+}
+.Testimony-text-content-before{
+    width: 100vw;
 }
 .Testimony-text-content{
     padding: 10px;
@@ -29,13 +34,14 @@
     background-color: var(--border-color);
     display: flex;
     justify-content: space-between;
-    padding-left: 10px;
+    padding-inline: 10px;
+    align-items: center;
+    
 }
 
-.content-close {
-    width: 20px;
-    height: 20px;
+.content-open{
+    background-color: var(--border-color);
+    border: 1px solid var(--text-color);
+    padding: 3px;
     border-radius: 10px;
-    justify-content: center;
-    align-items: center;
 }

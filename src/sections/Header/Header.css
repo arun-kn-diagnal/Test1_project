@@ -1,8 +1,8 @@
 .headerContainer{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding:10px;
+    justify-content: space-around;
+    padding-inline: 5vw;
     align-items: center;
     background-color: rgba(240, 248, 255, 0) ;
     position: absolute;
@@ -23,7 +23,7 @@
 #login{
     background-color: var(--primary-color);
     font-size: xx-large;
-    padding: 0px 10px 0px 10px;
+    padding-inline: 2vw;
     border-radius: 20px;
     font-size: medium;
     color: var(--secondary-color);    

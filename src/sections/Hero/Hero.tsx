@@ -9,6 +9,8 @@ export default function Hero() {
 
   const navigate = useNavigate();
 
+  
+
   return (
     <div>
       {/* Hero Section */}

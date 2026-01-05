@@ -8,8 +8,11 @@
 
 .top-main-box {
     box-shadow: inset 0px -20px 10px var(--border-color);
-    padding: 60px;
+    padding: 40px;
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 }
 
 .movie-title {
@@ -99,19 +102,9 @@
 
 }
 
-.watchNow {
-    padding: .6vh;
-    font-size: 1.4vh;
-    width: fit-content;
-    height: fit-content;
-    margin-bottom: 10px;
-    background-color: var(--border-color);
-    color: var(--text-color);
-    border-radius: 20px;
-}
 
 .rate-main-box {
-
+    
     display: flex;
     gap: 20px;
     overflow: auto;
@@ -123,7 +116,40 @@
 
 .movie-details-button {
     display: flex;
-    position: absolute;
-    right: 2vw;
-    gap: 20px;
+    position: relative;
+    gap: 10vw;
+    width: 80vw;
+    
+}
+
+.watchNow {
+    padding: .6vh;
+    font-size: 1.4vh;
+    width: fit-content;
+    height: fit-content;
+    padding-inline: 10vw;
+    margin-bottom: 10px;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border-radius: 20px;
+}
+
+.content-section-box{
+    padding-inline: 5vw;
+    padding-top: 2vw;
+}
+
+.content-section-box h4{
+    padding-bottom: 10px;
+}
+@media screen and (max-width:992px) {
+    
+}
+
+@media screen and (max-width:600px) {
+    .rate-main-box{
+        overflow: none;
+        flex-wrap: wrap;
+    }
+    
 }
