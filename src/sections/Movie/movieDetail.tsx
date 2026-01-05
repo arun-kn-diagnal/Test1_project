@@ -25,7 +25,7 @@ const cards = () => {
     };
     const watchNowMovie = (event: React.FormEvent) => {
         event.preventDefault();
-        navigator(`/video/${movie?.backdrop_path}`);
+        navigator(`/video/${movie?.id}`);
     };
 
 

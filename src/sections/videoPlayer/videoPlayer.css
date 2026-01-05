@@ -1,0 +1,44 @@
+.video-section-container {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+.holdin-place {
+    display:block;
+    position:fixed;
+    
+    z-index:1;
+    
+
+
+  }
+
+.move-place {
+    display:block;
+    position:absolute;
+    margin-top:1190px;
+    width:100%;
+    height:500px;
+    z-index:2;
+    background-color: var(--background-color);
+
+    border-radius: 20px 20px 0px 0px ;
+}
+
+
+
+@media screen  and (max-width:600px){
+    .holdin-place{
+        height: 50vh;
+    }
+    .move-place {
+        margin-top: 35vh;
+        border-radius: 0px;
+    }
+}

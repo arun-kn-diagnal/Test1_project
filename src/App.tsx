@@ -83,7 +83,7 @@ function App() {
           } />
 
 
-          <Route path="/video/:backdrop_path" element={
+          <Route path="/video/:id" element={
             
              <Videojs />
              

@@ -39,7 +39,6 @@ const MovieListings = (props: propsOnlyText) => {
             <div className="movielist-item">
               <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
 
-              <div className="circle"><p>{index + 1}</p></div>
 
 
             </div>

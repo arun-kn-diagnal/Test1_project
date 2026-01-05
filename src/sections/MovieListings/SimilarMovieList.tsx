@@ -28,13 +28,35 @@ const MovieListings = (props: propsOnlyid) => {
       .catch(err => console.error(err));
   }, [props.id])
 
+
+  useEffect(() => {
+    if (movies) {
+
+    } else {
+      const options = {
+        method: 'GET',
+        url: `https://api.themoviedb.org/3/movie/${83533}/similar`,
+
+        params: { language: 'en-US' },
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NzNmNzg2NTg4YWM5MDY4YmI0YmU0MDMwYjQwMDM1NSIsIm5iZiI6MTc2NzAwOTI0My42NTYsInN1YiI6IjY5NTI2YmRiNTMxNjZkOTQ4ZWU0MTRkYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wyN8v7_geKLEsXycXo_UBEWlsR-KKT_6dmpfoA8T8o8'
+        }
+      };
+      axios
+        .request(options)
+        .then(res => setMoiveis(res.data.results))
+        .catch(err => console.error(err));
+    }
+  })
+
   return (
     <>
       <div className="main-container-listings" id="similar">
         <h1 className="heading-lisitng">Similar</h1>
 
         <div className="movielist-container">
-          
+
           {movies?.map((movie: movieCard, index: number) => (
             <div className="movielist-item" key={index}>
               <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>

@@ -16,14 +16,15 @@ export const VideoJS = () => {
 
         const videoElement = document.createElement("video-js");
         videoRef.current.appendChild(videoElement);
+        
 
         videojs(videoElement, {
             autoplay: true,
             controls: true,
-            videoWidth: "100vh",
+           
             fluid: true,
             sources: [{
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
                 type: 'video/mp4'
             }],
             poster: {imageBannerLink}
