@@ -23,6 +23,13 @@ const cards = () => {
         event.preventDefault();
         navigator(`/watch/${movie?.id}`);
     };
+    const watchNowMovie = (event: React.FormEvent) => {
+        event.preventDefault();
+        navigator(`/video/${movie?.backdrop_path}`);
+    };
+
+
+
 
     const desc: RateProps['tooltips'] = [
         'terrible',
@@ -110,7 +117,7 @@ const cards = () => {
                     </div>
                     <div className="movie-details-button">
                         <button className="watchNow" onClick={watchNow}>trailer</button>
-                        <button className="watchNow" onClick={watchNow}>Watch Now</button>
+                        <button className="watchNow" onClick={watchNowMovie}>Watch Now</button>
                     </div>
                 </div>
 

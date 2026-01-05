@@ -9,20 +9,21 @@
 
     --border-color:#351064;
 
-
 }
 .body{
     padding: 20px;
     display: flex;
     background-color: var(--background-color);
 
+
 }
 /* arun remove this is for css making 
 div{
     border:1px solid red;
-}
+} */
 
- */
+
+
 
 .set-frame{
     box-shadow: 2px -30px 80px var(--background-color);

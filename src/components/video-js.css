@@ -1,0 +1,14 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background-color);
+    
+    
+    
+}
+.video{
+    margin-top:10vh;
+    width: 100vw;
+    height: fit-content;
+    
+}

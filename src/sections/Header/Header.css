@@ -12,18 +12,22 @@
 }
 .logoHeading{
     color: var(--text-color);
+    font-size: xx-large;
 }
 
 .Highligthed{
     color: var(--primary-color);
+    
 }
 
 #login{
     background-color: var(--primary-color);
-    
+    font-size: xx-large;
     padding: 0px 10px 0px 10px;
     border-radius: 20px;
     font-size: medium;
     color: var(--secondary-color);    
+    width: 10vw;
+    height: 2.5vh;
 
 }

@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-
+import Videojs from "./sections/videoPlayer/videoPlayer"
 const Hero = lazy(() => import('./sections/Hero/Hero'))
 const Footer = lazy(() => import('./sections/Footer/Footer'))
 const FaQ = lazy(() => import('./sections/FaQ/FaQ'))
@@ -19,21 +19,23 @@ import './App.css'
 
 import { Affix } from 'antd';
 function App() {
-  const top:number= 0;
+  const top: number = 0;
   // const videoUrl = "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
 
   return (
     <>
-      <Affix offsetTop={top}>
-        <Headers />
-      </Affix>
+
       <BrowserRouter>
+        <Affix offsetTop={top}>
+          <Headers />
+        </Affix>
         <Routes>
 
 
           <Route path="/" element={
             <>
               <Hero />
+             
 
               <TopRated title={"trending"} />
               <FaQ></FaQ>
@@ -78,7 +80,15 @@ function App() {
 
           <Route path="/signup" element={
             <SignUp></SignUp>
-          }/>
+          } />
+
+
+          <Route path="/video/:backdrop_path" element={
+            
+             <Videojs />
+             
+          }
+          />
         </Routes>
 
 
