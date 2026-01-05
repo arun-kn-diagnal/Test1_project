@@ -1,33 +1,46 @@
-.headerContainer{
+.headerContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-inline: 5vw;
     align-items: center;
-    background-color: rgba(240, 248, 255, 0) ;
+    background-color: rgba(240, 248, 255, 0);
     position: absolute;
     z-index: 60;
     width: 99vw;
-    
+
 }
-.logoHeading{
+
+.logoHeading {
     color: var(--text-color);
     font-size: xx-large;
 }
 
-.Highligthed{
+.Highligthed {
     color: var(--primary-color);
-    
+
 }
 
-#login{
+#login {
     background-color: var(--primary-color);
     font-size: xx-large;
     padding-inline: 2vw;
     border-radius: 20px;
     font-size: medium;
-    color: var(--secondary-color);    
+    color: var(--secondary-color);
     width: fit-content;
     height: 2.5vh;
 
+}
+
+@media screen and (max-width:992px) {
+    #login {
+        height: 5vh;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #login {
+        height: 5vh;
+    }
 }

@@ -7,6 +7,7 @@ const header = () => {
   const [Guest, setGuest] = useState<boolean>(true);
 
   const LogIn = () => {
+    navigate('/signin')
     setGuest(false)
   }
 
