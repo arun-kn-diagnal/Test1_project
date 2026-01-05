@@ -6,7 +6,7 @@ const MovieListings = lazy(() => import('../MovieListings/MovieListings'))
 
 
 import "./MoviePlayer.css"
-const videoPlayer = () => {
+const MoviePlayer = () => {
     const { id } = useParams();
     return (
         <div className="video-section-container">
@@ -28,4 +28,4 @@ const videoPlayer = () => {
     )
 }
 
-export default videoPlayer
+export default MoviePlayer

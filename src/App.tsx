@@ -9,8 +9,8 @@ const MovieListings = lazy(() => import('./sections/MovieListings/MovieListings'
 const MoviesDetails = lazy(() => import('./sections/Movie/movieDetail'))
 const Headers = lazy(() => import('./sections/Header/Header'))
 const CarouselSection = lazy(() => import('./sections/Carousel/CarouselSection'))
-const VideoPlayer = lazy(() => import('./sections/videoPlayer/videoPlayer'))
-const MoviePlayer = lazy(()=>import('./sections/videoPlayer/moviePlayer'))
+const VideoPlayer = lazy(() => import('./sections/videoPlayer/VideoPlayer'))
+const MoviePlayer = lazy(()=>import('./sections/videoPlayer/MoviePlayer'))
 
 const SignUp = lazy(() => import('./sections/SIgn/SignUp'))
 
