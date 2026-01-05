@@ -29,7 +29,7 @@
     font-size: medium;
     color: var(--secondary-color);
     width: fit-content;
-    height: 2.5vh;
+    height: fit-content;
 
 }
 

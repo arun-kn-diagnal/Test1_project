@@ -9,6 +9,8 @@ const cards = (props: movieCard) => {
 
     const navigate = useNavigate();
 
+
+
     const handleMovie = (event: React.FormEvent) => {
         event.preventDefault();
         navigate(`/movies/${props.id}` ,{replace:true});
