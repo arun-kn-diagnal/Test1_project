@@ -81,3 +81,10 @@ export type movieDetails = {
   vote_count: number;
 
 }
+
+
+export type castcard = {
+  original_name:string;
+  profile_path:string;
+  character:string;
+}

@@ -23,6 +23,9 @@
     display:block;
     position:absolute;
     margin-top:1190px;
+    scroll-snap-stop: always;
+        scroll-snap-align: start;
+
     width:100%;
     height:500px;
     z-index:2;
@@ -41,4 +44,21 @@
         margin-top: 35vh;
         border-radius: 0px;
     }
+}
+
+
+@media screen and (max-width:900px) and (min-height:800px){
+    .move-place{
+        margin-top: 61vh;
+        border-radius: 0px;
+    }
+    
+}
+@media screen and (min-width:900px){
+    
+    .move-place{
+        margin-top: 90vh;
+        border-radius: 0px;
+    }
+    
 }

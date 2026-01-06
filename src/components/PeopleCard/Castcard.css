@@ -1,4 +1,4 @@
-.card-container {
+.cast-cast-container {
     width: 20vh;
 
     height: fit-content;
@@ -6,6 +6,7 @@
     position: relative;
     border: 0.5px solid violet;
     animation: boxShadow 5s infinite;
+    border-radius: 10px;
     
 
 
@@ -19,7 +20,8 @@
 
 }
 
-.card-container img {
+.cast-cast-container img {
+    border-radius: 10px;
     max-width: 100%;
     height: auto;
     display: block;
@@ -27,7 +29,7 @@
     box-shadow: 2px double var(--border-color);
 }
 
-.card-movie-details {
+.card-cast-details {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,15 +41,17 @@
     color: aliceblue;
     font-style: oblique;
     background-color: rgba(0, 0, 0, 0.452);
+    justify-content: center;
 
 }
 
-.card-movie-details h3 {
+.card-cast-details h3 {
     align-content: center;
     font-style: italic;
+    justify-content: center;
 }
 
-.card-movie-other {
+.cast-cast-other {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -56,13 +60,14 @@
 }
 
 @media screen and (max-width:992px) {
-    .card-container {
-        width: 20vw;
+    .cast-cast-container {
+        width: 15vw
+
     }
 }
 
 @media screen and (max-width:600px) {
-    .card-container {
-        width: 40vw;
+    .cast-cast-container {
+        width: 20vw;
     }
 }

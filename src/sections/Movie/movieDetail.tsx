@@ -8,12 +8,13 @@ import SimilarMovieList from '../MovieListings/SimilarMovieList'
 import { Flex, Rate } from 'antd';
 import type { RateProps } from 'antd';
 import { lazy } from "react";
+const CastList = lazy(() => import('../CastList/Castlisting'))
 
 const Testimony = lazy(() => import('../../components/Testimony/Testimony'))
 
 const Photo = lazy(() => import('../../components/Photos/Photo'))
 
-const cards = () => {
+const MovieDetail = () => {
     const { id } = useParams();
     const [movie, setMoiveis] = useState<any>();
 
@@ -87,7 +88,8 @@ const cards = () => {
     return (
         <div className='movie-detail-container' >
 
-            <div className="top-main-box" style={{ width: "50", height: "fit-content", backgroundImage: `url(${imageBannerLink})`, backgroundSize: "100% 100%", backgroundRepeat: "no-repeat" }}><h1 className="movie-title">{movie?.original_title}</h1>
+            <div className="top-main-box" style={{ width: "50", height: "fit-content", backgroundImage: `url(${imageBannerLink})`, backgroundSize: "100% 100%", backgroundRepeat: "no-repeat" }}>
+                <h1 className="movie-title">{movie?.original_title}</h1>
                 <h2 className="movie-subtitle">{movie?.tagline}</h2>
                 <div className="movie-stats">
                     <h4 className="imbd-rate">{movie?.vote_average}</h4>
@@ -106,12 +108,12 @@ const cards = () => {
                 <div className="rate-main-box">
                     <div className="rate-sub-Box">
                         <h1>
-                            {value / 2}
+                            {(value/2).toFixed(2)}
                         </h1>
                     </div>
                     <div className="rate-sub-Box">
                         <Flex gap="middle" vertical>
-                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf defaultValue={5} />
+                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf value={(value/2)} />
                         </Flex>
                         <h6>rated by {movie?.vote_count}</h6>
                     </div>
@@ -129,6 +131,11 @@ const cards = () => {
 
             </div>
             <div className="shade-movie-details">
+                <div className="content-section-box">
+                    <h4 className="title-movie-details">
+                        Top Billed Cast
+                    </h4>
+                    <CastList id={Number(id)}></CastList>                </div>
                 <div className="content-section-box">
                     <h4 className="title-movie-details">
                         Overview
@@ -149,12 +156,11 @@ const cards = () => {
 
                         ))}
                     </div>
-
-
-                    <div>
-                    </div>
                 </div>
                 <div className="content-section-box">
+                    <h4 className="title-movie-details">
+                        More like {movie?.original_title}
+                    </h4>
                     <SimilarMovieList id={Number(id)} />
                 </div>
                 <div className="content-section-box">
@@ -165,7 +171,7 @@ const cards = () => {
                 </div>
                 <div className="content-section-box">
                     <h4 className="title-movie-details">
-                        Hot clicks
+                        Backdrops
                     </h4>
                     <Photo key={coll} id={String(id)} original_language={`${movie?.original_language}`}></Photo>
                 </div>
@@ -177,4 +183,4 @@ const cards = () => {
     )
 }
 
-export default cards
+export default MovieDetail

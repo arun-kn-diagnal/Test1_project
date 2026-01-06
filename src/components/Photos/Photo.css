@@ -5,7 +5,7 @@
     overflow-x: auto;
     scrollbar-width: none;
 
-    width: 100vw;
+    width: 100rcap;
     height: 30vh;
     padding: 10px;
     background-color: none;
@@ -16,7 +16,7 @@
 
 
 .box img{
-    width: 60vw;
+    width: 30vw;
     height: 30vh;
 }
 @-webkit-keyframes move {

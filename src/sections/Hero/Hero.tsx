@@ -25,8 +25,8 @@ export default function Hero() {
                 experience is at your fingertips.</h1>
             </div>
             <div className="heto-actions">
-              <input required type="email" placeholder="campion@move.net" className="hero-input" />
-              <button onClick={()=>{navigate("/movies")}} className="hero-btn-sigup">Sign UP</button>
+              <input required type="email" placeholder="campion@move.net" className="hero-input" id="email" />
+              <button onClick={()=>{navigate("/signup"),{email:{}}}} className="hero-btn-sigup">Sign UP</button>
             </div>
 
           </div>

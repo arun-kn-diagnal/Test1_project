@@ -53,8 +53,6 @@ const MovieListings = (props: propsOnlyid) => {
   return (
     <>
       <div className="main-container-listings" id="similar">
-        <h1 className="heading-lisitng">SIMILAR</h1>
-
         <div className="movielist-container">
 
           {movies?.map((movie: movieCard, index: number) => (
