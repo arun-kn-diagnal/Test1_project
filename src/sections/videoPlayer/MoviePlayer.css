@@ -10,36 +10,32 @@
 
 
 .holdin-place {
-    display:block;
-    position:fixed;
-    
-    z-index:1;
-    
-
-
-  }
+    display: block;
+    position: fixed;
+    z-index: 1;
+}
 
 .move-place {
-    display:block;
-    position:absolute;
-    margin-top:1190px;
+    display: block;
+    position: absolute;
+    margin-top: 1190px;
     scroll-snap-stop: always;
-        scroll-snap-align: start;
-
-    width:100%;
-    height:500px;
-    z-index:2;
+    scroll-snap-align: start;
+    width: 100%;
+    height: 500px;
+    z-index: 2;
     background-color: var(--background-color);
 
-    border-radius: 20px 20px 0px 0px ;
+    border-radius: 20px 20px 0px 0px;
 }
 
 
 
-@media screen  and (max-width:600px){
-    .holdin-place{
+@media screen and (max-width:600px) {
+    .holdin-place {
         height: 50vh;
     }
+
     .move-place {
         margin-top: 35vh;
         border-radius: 0px;
@@ -47,18 +43,19 @@
 }
 
 
-@media screen and (max-width:900px) and (min-height:800px){
-    .move-place{
+@media screen and (max-width:900px) and (min-height:800px) {
+    .move-place {
         margin-top: 61vh;
         border-radius: 0px;
     }
-    
+
 }
-@media screen and (min-width:900px){
-    
-    .move-place{
+
+@media screen and (min-width:900px) {
+
+    .move-place {
         margin-top: 90vh;
         border-radius: 0px;
     }
-    
+
 }

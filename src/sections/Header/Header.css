@@ -1,13 +1,13 @@
 .headerContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-inline: 5vw;
     align-items: center;
     background-color: rgba(240, 248, 255, 0);
     position: absolute;
     z-index: 60;
-    width: 99vw;
+    width: 90vw;
 
 }
 
@@ -31,6 +31,9 @@
     width: fit-content;
     height: fit-content;
 
+}
+.SearchIcon{
+    background-color: none;
 }
 
 @media screen and (max-width:992px) {

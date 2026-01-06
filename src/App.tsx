@@ -1,14 +1,13 @@
 import { lazy } from 'react';
-const Hero = lazy(() => import('./sections/Hero/Hero'))
 const Footer = lazy(() => import('./sections/Footer/Footer'))
-const FaQ = lazy(() => import('./sections/FaQ/FaQ'))
-// const Whyus = lazy(() => import('./sections/WhyUs/WhyUs'))
-const TopRated = lazy(() => import('./sections/MovieListings/TopRated'))
+import Landing from './pages/Landing';
+import Catalog from './pages/Catalog'
 
-const MovieListings = lazy(() => import('./sections/MovieListings/MovieListings'))
+import Search from './pages/SearchCatalog';
+// const Whyus = lazy(() => import('./sections/WhyUs/WhyUs'))
+
 const MoviesDetails = lazy(() => import('./sections/Movie/movieDetail'))
 const Headers = lazy(() => import('./sections/Header/Header'))
-const CarouselSection = lazy(() => import('./sections/Carousel/CarouselSection'))
 const VideoPlayer = lazy(() => import('./sections/videoPlayer/VideoPlayer'))
 const MoviePlayer = lazy(()=>import('./sections/videoPlayer/MoviePlayer'))
 
@@ -37,44 +36,18 @@ function App() {
 
 
           <Route path="/" element={
-            <>
-              <Hero />
-             
-
-              <TopRated title={"trending"} />
-              <FaQ></FaQ>
-
-            </>}>
+            <Landing />}>
 
           </Route>
 
           <Route path="/movies" element={
             <>
-              <div className="backframe">
-
-                <CarouselSection ></CarouselSection>
-              </div>
-
-              <div className="set-frame">
-
-                <TopRated title={"trending"} />
-                <MovieListings title={"top_rated"} />
-                <MovieListings title={"now_playing"} />
-                <MovieListings title={"upcoming"} />
-                <MovieListings title={"popular"} />
-
-              </div>
-
-
-
+              <Catalog />
             </>
           }></Route>
           <Route path="/movies/:id" element={<MoviesDetails />} />
 
-          <Route path='/faq' element={
-            <FaQ />
-          } />
-
+        
           <Route path="*" element={
             <PageNotFound />
           } />
@@ -95,12 +68,9 @@ function App() {
              
           }
           />
+
+          <Route path='/Search' element={<Search/>}/>
         </Routes>
-
-
-
-
-
 
 
       </BrowserRouter>

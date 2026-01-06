@@ -1,0 +1,28 @@
+
+
+.searchBox-main-container{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px;
+    padding: 5vw;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+.searchList-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.searchBox{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

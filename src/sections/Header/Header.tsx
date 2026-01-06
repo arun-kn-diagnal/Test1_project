@@ -1,7 +1,7 @@
 import "./Header.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { SearchIcon } from "lucide-react";
 const header = () => {
   const navigate = useNavigate();
   const [Guest, setGuest] = useState<boolean>(true);
@@ -10,6 +10,10 @@ const header = () => {
     navigate('/signin')
     setGuest(false)
   }
+  const Search = ()=>{
+    navigate('/Search')
+  }
+
 
   return (
     <div className="headerContainer">
@@ -17,6 +21,7 @@ const header = () => {
       {Guest &&
         <button id="login" onClick={LogIn}>Signin</button>
       }
+      { Guest|| <SearchIcon onClick={Search}/>}
 
     </div>
   )
