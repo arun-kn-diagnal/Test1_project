@@ -29,8 +29,7 @@ const MovieListings = (props:propsOnlyid) => {
 
     return (
         <>
-            <div className="main-container-listings" id="cast-container">
-                <div className="castlist-container">
+                <div className="castlist-container" id="cast-container">
 
                     {CastList?.map((movie: castcard, index: number) => (
                         <> {movie.profile_path && <div className="castlist-item" key={index}>
@@ -40,7 +39,6 @@ const MovieListings = (props:propsOnlyid) => {
                     ))}
 
                 </div>
-            </div>
         </>
     )
 }

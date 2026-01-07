@@ -30,6 +30,7 @@ const cards = (props: castcard) => {
                     </div>
 
                 </div>
+                
             }
         </div>
     )

@@ -1,32 +1,24 @@
 .cast-cast-container {
-    width: fit-content;
+    width: 8vw;
 
     height: fit-content;
     display: inline-block;
     position: relative;
-    border: 0.5px solid violet;
-    animation: boxShadow 5s infinite;
-    border-radius: 10px;
     
 
 
 
 }
 
-@keyframes boxShadow {
-    50% {
-        box-shadow: -10px 10px 24px var(--border-color);
-    }
-
-}
 
 .cast-cast-container img {
-    border-radius: 10px;
+    border-radius: 100px;
+        border: 0.5px dotted violet;
+
     max-width: 100%;
     height: auto;
     display: block;
     z-index: -1;
-    box-shadow: 2px double var(--border-color);
 }
 
 .card-cast-details {
@@ -40,7 +32,8 @@
     width: 100%;
     color: aliceblue;
     font-style: oblique;
-    background-color: rgba(0, 0, 0, 0.452);
+    background-color:var(--border-color);
+    border: 1px solid var(--text-color);
     justify-content: center;
     font-size: small;
     text-align: center;
@@ -70,7 +63,7 @@
 
 @media screen and (max-width:600px) {
     .cast-cast-container {
-        width: 30vw;
+        width: 20vw;
         
     }
 }

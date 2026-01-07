@@ -38,6 +38,9 @@
     font-style: oblique;
     background-color: rgba(0, 0, 0, 0.452);
     padding-bottom: 10px;
+    padding-top: 10px;
+    height: fit-content;
+    
 
 }
 
@@ -57,7 +60,6 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    border-radius: 0px 0px 10px 10px;
 }
 
 @media screen and (max-width:992px) {

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { lazy } from "react"
-import Videojs from "../../components/video-js"
+import Videojs from "../../components/videoPlayer/video-js"
 import SimilarMovieList from "../MovieListings/SimilarMovieList"
 const MovieListings = lazy(() => import('../MovieListings/MovieListings'))
 

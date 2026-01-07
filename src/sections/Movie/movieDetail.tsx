@@ -29,6 +29,15 @@ const MovieDetail = () => {
         navigator(`/video/${movie?.id}`);
     };
 
+    const options = {
+        method: 'GET',
+        url: `https://api.themoviedb.org/3/movie/${id}`,
+        params: { language: 'en-US' },
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NzNmNzg2NTg4YWM5MDY4YmI0YmU0MDMwYjQwMDM1NSIsIm5iZiI6MTc2NzAwOTI0My42NTYsInN1YiI6IjY5NTI2YmRiNTMxNjZkOTQ4ZWU0MTRkYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wyN8v7_geKLEsXycXo_UBEWlsR-KKT_6dmpfoA8T8o8'
+        }
+    };
 
 
 
@@ -41,18 +50,8 @@ const MovieDetail = () => {
     ];
     const [value, setValue] = useState<number>(0);
     const [myValue, setMyValue] = useState<number>(0);
-    const [coll, setColl] = useState<number>(0);
 
     const [movieTime, setTime] = useState<string>("");
-    const options = {
-        method: 'GET',
-        url: `https://api.themoviedb.org/3/movie/${id}`,
-        params: { language: 'en-US' },
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NzNmNzg2NTg4YWM5MDY4YmI0YmU0MDMwYjQwMDM1NSIsIm5iZiI6MTc2NzAwOTI0My42NTYsInN1YiI6IjY5NTI2YmRiNTMxNjZkOTQ4ZWU0MTRkYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wyN8v7_geKLEsXycXo_UBEWlsR-KKT_6dmpfoA8T8o8'
-        }
-    };
 
     const imageBannerLink: string = `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`;
     // const imageLink: string = `https://image.tmdb.org/t/p/original/${movie?.poster_path}`;
@@ -63,15 +62,12 @@ const MovieDetail = () => {
                 setMoiveis(res.data);
 
                 setTime(timeFormator(res.data.runtime));
-                if (res.data.belongs_to_collection.id) {
-                    setColl(res.data.belongs_to_collection.id);
-                }
+
                 setValue(res.data.vote_average);
 
             }
             )
             .catch(err => console.error(err));
-
 
     }, [id])
 
@@ -108,12 +104,12 @@ const MovieDetail = () => {
                 <div className="rate-main-box">
                     <div className="rate-sub-Box">
                         <h1>
-                            {(value/2).toFixed(2)}
+                            {(value / 2).toFixed(2)}
                         </h1>
                     </div>
                     <div className="rate-sub-Box">
                         <Flex gap="middle" vertical>
-                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf value={(value/2)} />
+                            <Rate key={myValue} tooltips={desc} onChange={setMyValue} allowHalf value={(value / 2)} />
                         </Flex>
                         <h6>rated by {movie?.vote_count}</h6>
                     </div>
@@ -173,7 +169,7 @@ const MovieDetail = () => {
                     <h4 className="title-movie-details">
                         Backdrops
                     </h4>
-                    <Photo key={coll} id={String(id)} original_language={`${movie?.original_language}`}></Photo>
+                    <Photo id={String(id)} original_language={`${movie?.original_language}`}></Photo>
                 </div>
             </div>
 
