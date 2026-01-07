@@ -1,6 +1,6 @@
 .main-container-listings {
     padding: 10px;
-
+    
 
 
 }
@@ -27,7 +27,7 @@
     flex-direction: row;
     overflow-x: auto;
     scrollbar-width: none;
-    gap: 30px;
+    gap: 1vw;
     padding: 5px;
 }
 

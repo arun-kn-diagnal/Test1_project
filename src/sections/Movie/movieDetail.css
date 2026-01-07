@@ -8,7 +8,7 @@
 
 .top-main-box {
     box-shadow: inset 0px -20px 10px var(--border-color);
-    padding: 40px;
+    padding: 10vw;
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@
 }
 
 .desc-box {
-    padding: 30px;
+    padding: 1vw;
     font-size: min(25px, 2vh);
     flex-shrink: 3;
 }

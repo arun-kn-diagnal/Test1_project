@@ -4,12 +4,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-top: 1vh;
     
 }
 .Testimony-box{
     display: flex;
     
-   
+   border-radius: 10px;
     border: 2px solid var(--border-color);
     background-color: var(--background-color);
 }
@@ -27,12 +28,15 @@
     overflow-y:auto;
     color:var(--text-color);
 }
-
+.content-review{
+    font-size: smaller;
+}
 
 
 .content-author{
     background-color: var(--border-color);
     display: flex;
+    font-size: smaller;
     justify-content: space-between;
     padding-inline: 10px;
     align-items: center;
@@ -41,7 +45,7 @@
 
 .content-open{
     background-color: var(--border-color);
-    border: 1px solid var(--text-color);
+    border: 0px;
     padding: 3px;
     border-radius: 10px;
 }

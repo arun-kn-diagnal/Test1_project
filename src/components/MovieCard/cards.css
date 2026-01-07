@@ -37,12 +37,19 @@
     color: aliceblue;
     font-style: oblique;
     background-color: rgba(0, 0, 0, 0.452);
+    padding-bottom: 10px;
 
 }
 
-.card-movie-details h3 {
+.card-movie-title {
     align-content: center;
     font-style: italic;
+    text-align: center;
+    font-size: small;
+}
+
+.language{
+    font-size: small;
 }
 
 .card-movie-other {

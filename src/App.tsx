@@ -1,13 +1,13 @@
 import { lazy } from 'react';
-const Footer = lazy(() => import('./sections/Footer/Footer'))
+const Footer = lazy(() => import('./components/Footer/Footer'))
 import Landing from './pages/Landing';
 import Catalog from './pages/Catalog'
 
-import Search from './pages/SearchCatalog';
+import Search from './pages/SearchPage/SearchCatalog';
 // const Whyus = lazy(() => import('./sections/WhyUs/WhyUs'))
 
 const MoviesDetails = lazy(() => import('./sections/Movie/movieDetail'))
-const Headers = lazy(() => import('./sections/Header/Header'))
+const Headers = lazy(() => import('./components/Header/Header'))
 const VideoPlayer = lazy(() => import('./sections/videoPlayer/VideoPlayer'))
 const MoviePlayer = lazy(()=>import('./sections/videoPlayer/MoviePlayer'))
 
@@ -15,7 +15,7 @@ const SignUp = lazy(() => import('./sections/SIgn/SignUp'))
 const Signin =lazy(() => import('./sections/SIgn/Signin'))
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { PageNotFound } from './sections/notFound/PageNotFound';
+import { PageNotFound } from './pages/notFound/PageNotFound';
 import './App.css'
 
 import { Affix } from 'antd';

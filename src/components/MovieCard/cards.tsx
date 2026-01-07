@@ -33,10 +33,10 @@ const cards = (props: movieCard) => {
                         {props.title}
                     </h3>
                     <div className="card-movie-other">
-                        <p>{props.release_date}</p>
-                        <h4 className="journers">
+                        <p className="language">{props.release_date}</p>
+                        <p className="language">
                             {props.original_language}
-                        </h4>
+                        </p>
                     </div>
 
                 </div>

@@ -3,6 +3,7 @@ import type { propsIdandLan } from '../../types/types'
 import "./Photo.css"
 import axios from 'axios'
 
+
 const Photo = (props: propsIdandLan) => {
 
     const [photoD, setPhotoData] = useState<any>();

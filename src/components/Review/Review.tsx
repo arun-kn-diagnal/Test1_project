@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { propsOnlyid } from '../../types/types'
 import axios from 'axios'
-import './Testimony.css'
+import './Review.css'
 
 import { LucideArrowDown, LucideArrowUp } from 'lucide-react'
 

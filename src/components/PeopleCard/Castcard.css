@@ -1,5 +1,5 @@
 .cast-cast-container {
-    width: 20vh;
+    width: fit-content;
 
     height: fit-content;
     display: inline-block;
@@ -42,6 +42,8 @@
     font-style: oblique;
     background-color: rgba(0, 0, 0, 0.452);
     justify-content: center;
+    font-size: small;
+    text-align: center;
 
 }
 
@@ -68,6 +70,7 @@
 
 @media screen and (max-width:600px) {
     .cast-cast-container {
-        width: 20vw;
+        width: 30vw;
+        
     }
 }

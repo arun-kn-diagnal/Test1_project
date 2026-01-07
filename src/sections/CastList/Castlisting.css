@@ -15,14 +15,15 @@
     flex-direction: row;
     overflow-x: auto;
     scrollbar-width: none;
-    gap: 30px;
-    padding: 5px;
+    gap: 1vw;
+    padding: 10px;
+
 }
 
 .castlist-item {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    
 
 
 

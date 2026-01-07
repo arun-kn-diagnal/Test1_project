@@ -1,11 +1,15 @@
 .notfound-main{
-    height: 90vh;
+    height: 100vh;
 }
 
 .notfound-content{
     display: flex;
     height: 100%;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
+    background-color: var(--background-color);
+    color:var(--text-color);
+    font-size: xx-large;
 }

@@ -10,7 +10,7 @@ import type { RateProps } from 'antd';
 import { lazy } from "react";
 const CastList = lazy(() => import('../CastList/Castlisting'))
 
-const Testimony = lazy(() => import('../../components/Testimony/Testimony'))
+const Testimony = lazy(() => import('../../components/Review/Review'))
 
 const Photo = lazy(() => import('../../components/Photos/Photo'))
 

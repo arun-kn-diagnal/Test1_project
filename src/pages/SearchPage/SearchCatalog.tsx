@@ -1,9 +1,9 @@
 
 import { lazy, useEffect, useState } from 'react';
-const Cards = lazy(() => import("../components/MovieCard/cards"))
+const Cards = lazy(() => import("../../components/MovieCard/cards"))
 
 import axios from "axios";
-import { type movieCard } from '../types/types';
+import { type movieCard } from '../../types/types';
 import "./SearchCatalog.css"
 
 import { Input } from 'antd';
@@ -12,14 +12,9 @@ import type { GetProps } from 'antd';
 
 function Landing() {
     type SearchProps = GetProps<typeof Input.Search>
-
     const { Search } = Input
-
-
     const [movies, setMoiveis] = useState<any[] | null>(null);
-
-    const [data, setData] = useState<string>("zoo");
-
+    const [data, setData] = useState<string>("lego");
 
     const options = {
         method: 'GET',
@@ -48,8 +43,6 @@ function Landing() {
             <div className="searchBox-main-container">
                 <div className="searchBox">
                     <Search placeholder='movie name' allowClear onSearch={onSearch} />
-                    
-
                 </div>
                 <div className="searchList-container">
                     {movies?.map((movie: movieCard, index: number) => (

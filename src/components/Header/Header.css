@@ -38,12 +38,12 @@
 
 @media screen and (max-width:992px) {
     #login {
-        height: 5vh;
+        height: 3vh;
     }
 }
 
 @media screen and (max-width:600px) {
     #login {
-        height: 5vh;
+        height: 3vh;
     }
 }

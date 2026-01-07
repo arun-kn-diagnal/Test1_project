@@ -16,7 +16,7 @@
 
 
 .box img{
-    width: 30vw;
+    width: fit-content;
     height: 30vh;
 }
 @-webkit-keyframes move {
