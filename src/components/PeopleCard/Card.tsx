@@ -18,7 +18,7 @@ const cards = (props: castcard) => {
     }
     return (
         <div className='cast-cast-container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
-            <img src={`https://image.tmdb.org/t/p/original/${props.profile_path}`} alt="" width="250" height="300" />
+            <img src={`https://image.tmdb.org/t/p/w220_and_h330_face/${props.profile_path}`} alt="" width="220" height="330" />
             {isShown &&
                 <div className="card-cast-details">
                     <h5 className="card-cast-title">

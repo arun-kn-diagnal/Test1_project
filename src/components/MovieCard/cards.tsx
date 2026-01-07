@@ -26,7 +26,7 @@ const cards = (props: movieCard) => {
     }
     return (
         <div className='card-container' onClick={handleMovie} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>
-            <img src={`https://image.tmdb.org/t/p/original/${props.poster_path}`} alt="" width="250" height="300" />
+            <img src={`https://image.tmdb.org/t/p/w220_and_h330_face/${props.poster_path}`} alt="" width="250" height="300" />
             {isShown &&
                 <div className="card-movie-details">
                     <h3 className="card-movie-title">
