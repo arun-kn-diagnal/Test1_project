@@ -4,7 +4,6 @@ import { type movieCard } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 
 const cards = (props: movieCard) => {
-
     const [isShown, setIsShow] = useState(false);
 
     const navigate = useNavigate();
