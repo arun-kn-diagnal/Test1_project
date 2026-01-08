@@ -53,7 +53,7 @@ const MovieDetail = () => {
 
     const [movieTime, setTime] = useState<string>("");
 
-    const imageBannerLink: string = `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`;
+    const imageBannerLink: string = `https://media.themoviedb.org/t/p/w533_and_h300_face/${movie?.backdrop_path}`;
     // const imageLink: string = `https://image.tmdb.org/t/p/original/${movie?.poster_path}`;
     useEffect(() => {
         axios

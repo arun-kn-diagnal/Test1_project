@@ -38,7 +38,7 @@ const Photo = (props: propsIdandLan) => {
 
                     <div className="box" key={file_path}>
 
-                        <img src={`https://image.tmdb.org/t/p/original/${photoD[index].file_path}`} alt="" height="fit-content" width="fit-content" />
+                        <img key={photoD.index} src={`https://media.themoviedb.org/t/p/w533_and_h300_face/${photoD[index].file_path}`} alt="" height="fit-content" width="fit-content" />
                     </div>
 
                 )

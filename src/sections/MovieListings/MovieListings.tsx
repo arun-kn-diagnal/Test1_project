@@ -27,7 +27,7 @@ const MovieListings = (props: propsOnlyText) => {
       .then(res => setMoiveis(res.data.results))
       .catch(err => console.error(err));
   }, [])
-
+console.log("is the place where it is run")
   return (
     <>
       <div className="main-container-listings" id="movie-container">
