@@ -15,7 +15,7 @@ const MoviePlayer = () => {
             </div>
             <div className="move-place">
 
-                <SimilarMovieList id={Number(id)} />
+                <SimilarMovieList id={Number(id)} original_title={""}/>
                 <MovieListings title={"top_rated"} />
                 <MovieListings title={"now_playing"} />
                 <MovieListings title={"upcoming"} />

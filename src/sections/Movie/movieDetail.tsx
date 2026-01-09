@@ -115,7 +115,7 @@ const MovieDetail = () => {
 
                 </div>
                 <div className="movie-details-button">
-                    {(movie?.video!=false)&&<button className="watchNow" onClick={watchNow}>trailer</button>}
+                    <button className="watchNow" onClick={watchNow}>trailer</button>
                     <button className="watchNow" onClick={watchNowMovie}>Watch Now</button>
                 </div>
 

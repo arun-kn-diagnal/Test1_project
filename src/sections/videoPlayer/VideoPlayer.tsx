@@ -1,10 +1,10 @@
 import ReactPlayer from 'react-player'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 const videoPlayer = () => {
     const { id } = useParams();
-    const [key,setKey]=useState<string>("");
+    const [key, setKey] = useState<string>("");
     const options = {
         method: 'GET',
         url: `https://api.themoviedb.org/3/movie/${id}/videos`,
@@ -15,15 +15,30 @@ const videoPlayer = () => {
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         axios
-        .request(options)
-        .then(res => setKey(res.data.results[0].key))
-        .catch(err => console.error(err));
+            .request(options)
+            .then(res => setKey(res.data.results[0].key))
+            .catch(err => console.error(err));
 
-    },[id])
+    }, [id])
     return (
-        <><ReactPlayer width='100vw' height='100vh' src={`https://www.youtube.com/watch?v=${key}`} /></>
+
+        <>
+            {(key!="")&&
+                
+                    <ReactPlayer width='100vw' height='100vh' src={`https://www.youtube.com/watch?v=${key}`} />
+
+                
+            }
+
+            {(key=="")&&
+                
+                    <ReactPlayer width='100vw' height='100vh' src={`https://www.youtube.com/shorts/Ay8lynMZ4mE?feature=share`} />
+
+                
+            }
+        </>
     )
 }
 
