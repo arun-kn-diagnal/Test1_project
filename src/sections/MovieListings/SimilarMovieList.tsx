@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { type movieCard } from "../../types/types";
-import { type propsOnlyid } from "../../types/types";
+import { type similar } from "../../types/types";
 
-const MovieListings = (props: propsOnlyid) => {
+const MovieListings = (props: similar) => {
 
   const [movies, setMoiveis] = useState<any[] | null>(null);
 
@@ -52,6 +52,9 @@ const MovieListings = (props: propsOnlyid) => {
 
   return (
     <>
+    {(movies?.length!=0)&&<><h4 className="title-movie-details">
+                        More like {props.original_title}
+                    </h4>
       <div className="main-container-listings" id="similar">
         <div className="movielist-container">
 
@@ -65,7 +68,7 @@ const MovieListings = (props: propsOnlyid) => {
           ))}
 
         </div>
-      </div>
+      </div></>}
     </>
   )
 }

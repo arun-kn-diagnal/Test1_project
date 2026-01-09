@@ -53,7 +53,6 @@ const MovieDetail = () => {
 
     const [movieTime, setTime] = useState<string>("");
 
-    const imageBannerLink: string = `https://media.themoviedb.org/t/p/w533_and_h300_face/${movie?.backdrop_path}`;
     // const imageLink: string = `https://image.tmdb.org/t/p/original/${movie?.poster_path}`;
     useEffect(() => {
         axios
@@ -62,7 +61,7 @@ const MovieDetail = () => {
                 setMoiveis(res.data);
 
                 setTime(timeFormator(res.data.runtime));
-
+                console.log(res.data)
                 setValue(res.data.vote_average);
 
             }
@@ -84,7 +83,7 @@ const MovieDetail = () => {
     return (
         <div className='movie-detail-container' >
 
-            <div className="top-main-box" style={{ width: "50", height: "fit-content", backgroundImage: `url(${imageBannerLink})`, backgroundSize: "100% 100%", backgroundRepeat: "no-repeat" }}>
+            <div className="top-main-box" style={{ width: "50", height: "fit-content", backgroundImage: `url(${`https://media.themoviedb.org/t/p/w533_and_h300_face/${movie?.backdrop_path}`})`, backgroundSize: "100% 100%", backgroundRepeat: "no-repeat" }}>
                 <h1 className="movie-title">{movie?.original_title}</h1>
                 <h2 className="movie-subtitle">{movie?.tagline}</h2>
                 <div className="movie-stats">
@@ -116,7 +115,7 @@ const MovieDetail = () => {
 
                 </div>
                 <div className="movie-details-button">
-                    <button className="watchNow" onClick={watchNow}>trailer</button>
+                    {(movie?.video!=false)&&<button className="watchNow" onClick={watchNow}>trailer</button>}
                     <button className="watchNow" onClick={watchNowMovie}>Watch Now</button>
                 </div>
 
@@ -128,36 +127,33 @@ const MovieDetail = () => {
             </div>
             <div className="shade-movie-details">
                 <div className="content-section-box">
-                    <h4 className="title-movie-details">
-                        Top Billed Cast
-                    </h4>
+                    
                     <CastList id={Number(id)}></CastList>                </div>
                 <div className="content-section-box">
-                    <h4 className="title-movie-details">
+                    {((movie?.overview)!="")&&<><h4 className="title-movie-details">
                         Overview
                     </h4>
                     <div className="desc-box">
                         <p>{movie?.overview}</p>
-                    </div>
+                    </div></>}
 
-                    <h4 className="title-movie-details">
+                    {(Number(movie?.production_companies.length) != 0) && <><h4 className="title-movie-details">
                         Production
                     </h4>
-                    <div className="company">
+                        <div className="company">
 
-                        {movie?.production_companies.map((name: string, index: number) => (
-                            <div key={name} className="company-details">
-                                <h6>{movie?.production_companies[index].name}</h6>
-                            </div>
+                            {movie?.production_companies.map((name: string, index: number) => (
+                                <div key={name} className="company-details">
+                                    <h6>{movie?.production_companies[index].name}</h6>
+                                </div>
 
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    </>}
                 </div>
                 <div className="content-section-box">
-                    <h4 className="title-movie-details">
-                        More like {movie?.original_title}
-                    </h4>
-                    <SimilarMovieList id={Number(id)} />
+                    
+                    <SimilarMovieList original_title={movie?.original_title} id={Number(id)} />
                 </div>
                 <div className="content-section-box">
                     <h4 className="title-movie-details">
@@ -165,12 +161,15 @@ const MovieDetail = () => {
                     </h4>
                     <Testimony id={Number(id)} ></Testimony>
                 </div>
-                <div className="content-section-box">
-                    <h4 className="title-movie-details">
-                        Backdrops
-                    </h4>
-                    <Photo id={String(id)} original_language={`${movie?.original_language}`}></Photo>
-                </div>
+                {(movie?.belongs_to_collection != null)&&<>
+                    <div className="content-section-box">
+                        <h4 className="title-movie-details">
+                            Backdrops
+                        </h4>
+                        <Photo id={String(id)} original_language={`${movie?.original_language}`}></Photo>
+                    </div>
+                    </>
+                }
             </div>
 
 

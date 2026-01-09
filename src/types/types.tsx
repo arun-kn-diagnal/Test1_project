@@ -57,6 +57,11 @@ export type genre = {
   id: number;
   name: string;
 }
+
+export type similar ={
+  id:number;
+  original_title:string;
+}
 export type movieDetails = {
   adult: boolean;
   backdrop_path: string | null;
