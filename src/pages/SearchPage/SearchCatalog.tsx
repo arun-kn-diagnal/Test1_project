@@ -48,7 +48,7 @@ function Landing() {
                     {movies?.map((movie: movieCard, index: number) => (
                         <div className="searchList-item" key={index}>
                             {movie.poster_path &&
-                                <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
+                                <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path} backdrop_path={movie.backdrop_path}></Cards>
                             }
 
                         </div>
