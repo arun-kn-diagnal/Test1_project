@@ -18,10 +18,12 @@ const cards = (props: movieCard) => {
 
     const handleMouseEnter = () => {
         setIsShow(true);
+        sessionStorage.setItem('banner',`${props.backdrop_path}`)
     }
 
     const handleMouseOut = () => {
         setIsShow(false);
+        sessionStorage.setItem('banner',``)
     }
     return (
         <div className='card-container' onClick={handleMovie} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut}>

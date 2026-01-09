@@ -26,6 +26,7 @@ export type movieCard = {
   release_date: String;
   original_language: string;
   poster_path: string;
+  backdrop_path:string;
 }
 
 

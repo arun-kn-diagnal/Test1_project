@@ -37,7 +37,7 @@ console.log("is the place where it is run")
 
           {movies?.map((movie: movieCard, index: number) => (
             <div className="movielist-item" key={index}>
-              <Cards imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
+              <Cards  imdb_id={movie.imdb_id} id={movie.id} title={movie.title} release_date={movie.release_date} backdrop_path={movie.backdrop_path} original_language={movie.original_language} poster_path={movie.poster_path}></Cards>
 
 
 
