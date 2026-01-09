@@ -53,8 +53,7 @@ const MovieListings = (props: similar) => {
   return (
     <>
     {(movies?.length!=0)&&<><h4 className="title-movie-details">
-                        More like {(props.original_title!="")&&<>{props.original_title}</>||<>this movie</>}
-                    </h4>
+                        More like {(props.original_title!="")}</h4>
       <div className="main-container-listings" id="similar">
         <div className="movielist-container">
 

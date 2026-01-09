@@ -43,7 +43,7 @@ const Photo = (props: propsOnlyid) => {
                         {status && (index === selected) ?
                             <div className='Testimony-box'>
                                 <div className='Testimony-text-content-box'>
-                                    <p className='content-author'>review by {reviews[index].author}
+                                    <p className='content-author full'>review by {reviews[index].author}
                                         <button className='content-open  ' onClick={() => {
                                             setStatus(!status)
                                             setSelected(null)

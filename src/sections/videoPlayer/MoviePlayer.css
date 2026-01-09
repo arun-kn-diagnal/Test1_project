@@ -2,7 +2,7 @@
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
     width: 100%;
     height: 100%;
     position: relative;
@@ -18,7 +18,7 @@
 .move-place {
     display: block;
     position: absolute;
-    margin-top: 1190px;
+    
     scroll-snap-stop: always;
     scroll-snap-align: start;
     width: 100%;
@@ -31,31 +31,27 @@
 
 
 
-@media screen and (max-width:600px) {
-    .holdin-place {
-        height: 50vh;
-    }
-
-    .move-place {
-        margin-top: 35vh;
-        border-radius: 0px;
+@media only screen and (max-width: 600px) {
+    .move-place{
+        margin-top: 30vh;
     }
 }
 
-
-@media screen and (max-width:900px) and (min-height:800px) {
-    .move-place {
-        margin-top: 61vh;
-        border-radius: 0px;
+@media only screen and (min-width: 600px) {
+    .move-place{
+        margin-top: max(30vh,55vw);
     }
-
 }
 
-@media screen and (min-width:900px) {
-
-    .move-place {
-        margin-top: 90vh;
-        border-radius: 0px;
+@media only screen and (min-width: 1800px) {
+    .holdin-place{
+        margin-top:-7vh;
     }
+}
 
+@media only screen and (min-width:1900px) {
+    .holdin-place{
+        margin-top: -100px;
+    }
+    
 }

@@ -40,9 +40,12 @@
     justify-content: space-between;
     padding-inline: 10px;
     align-items: center;
+   
     
 }
-
+.full{
+    width: 89vw;
+}
 .content-open{
     background-color: var(--border-color);
     border: 0px;
