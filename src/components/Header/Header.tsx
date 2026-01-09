@@ -2,18 +2,18 @@ import "./Header.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { SearchIcon } from "lucide-react";
+
 const header = () => {
   const navigate = useNavigate();
   const [Guest, setGuest] = useState<boolean>(true);
 
-  const LogIn = () => {
+   const LogIn = () => {
     navigate('/signin')
     setGuest(false)
   }
   const Search = ()=>{
     navigate('/Search')
   }
-
 
   return (
     <div className="headerContainer">

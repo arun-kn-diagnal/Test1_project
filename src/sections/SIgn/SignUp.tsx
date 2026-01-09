@@ -11,14 +11,12 @@ type FieldType = {
 };
 
 
-
-
 const SignUp: React.FC = () => {
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log(values.username)
     localStorage.setItem(String(values.username), String(values.password));
 
-    navigate("/movies")
+    navigate("/signin")
   };
 
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
